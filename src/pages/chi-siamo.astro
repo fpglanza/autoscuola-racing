@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TeamCard from "../components/ui/TeamCard.astro";
+import { team } from "../data/team";
+---
+
+<BaseLayout
+  title="Chi siamo | Autoscuola Racing"
+  description="Un metodo chiaro, progressivo e accompagnato per affrontare teoria ed esame con maggiore consapevolezza."
+>
+  <section class="section">
+    <div class="container max-w-4xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Chi siamo</p>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
+        Un metodo serio, umano e costruito intorno al percorso dello studente.
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-black/70">
+        Non ci interessa portarti in fretta all’esame. Ci interessa accompagnarti bene, aiutarti a capire davvero e farti arrivare pronto nel momento giusto.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container max-w-4xl">
+      <h2 class="text-3xl font-bold">Come lavoriamo</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl bg-white p-6">
+          <h3 class="text-lg font-bold">Comprensione</h3>
+          <p class="mt-3 text-sm leading-6 text-black/70">
+            La teoria non viene trattata come memoria meccanica, ma come comprensione reale.
+          </p>
+        </div>
+        <div class="rounded-3xl bg-white p-6">
+          <h3 class="text-lg font-bold">Progressione</h3>
+          <p class="mt-3 text-sm leading-6 text-black/70">
+            Ogni studente affronta il percorso con tempi coerenti con il proprio livello.
+          </p>
+        </div>
+        <div class="rounded-3xl bg-white p-6">
+          <h3 class="text-lg font-bold">Accompagnamento</h3>
+          <p class="mt-3 text-sm leading-6 text-black/70">
+            Restiamo presenti nei momenti chiave, fino a quando la preparazione è davvero solida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold">Il team</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">
+          Per ora usiamo placeholder, poi li sostituiamo con nomi, ruoli e foto reali.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {team.map((member) => <TeamCard {...member} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
