@@ -1,22 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TeamCard from "../components/ui/TeamCard.astro";
-import { team } from "../data/team";
+import { getCollection } from "astro:content";
+import { getPageContent } from "../lib/content";
+
+const page = await getPageContent("chi-siamo");
+const { title, description, heading, intro } = page.data;
+
+const team = (await getCollection("team")).sort(
+  (a, b) => a.data.order - b.data.order
+);
 ---
 
-<BaseLayout
-  title="Chi siamo | Autoscuola Racing"
-  description="Un metodo chiaro, progressivo e accompagnato per affrontare teoria ed esame con maggiore consapevolezza."
->
+<BaseLayout title={title} description={description}>
   <section class="section">
     <div class="container max-w-4xl">
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Chi siamo</p>
-      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-        Un metodo serio, umano e costruito intorno al percorso dello studente.
-      </h1>
-      <p class="mt-6 text-lg leading-8 text-black/70">
-        Non ci interessa portarti in fretta all’esame. Ci interessa accompagnarti bene, aiutarti a capire davvero e farti arrivare pronto nel momento giusto.
-      </p>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
+      <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
     </div>
   </section>
 
@@ -56,7 +57,7 @@ import { team } from "../data/team";
       </div>
 
       <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {team.map((member) => <TeamCard {...member} />)}
+        {team.map((member) => <TeamCard {...member.data} />)}
       </div>
     </div>
   </section>

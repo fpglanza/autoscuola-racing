@@ -2,22 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LocationCard from "../components/ui/LocationCard.astro";
 import { locations } from "../data/locations";
+import { getPageContent } from "../lib/content";
+
+const page = await getPageContent("contatti");
+const { title, description, heading, intro } = page.data;
 ---
 
-<BaseLayout
-  title="Contatti | Autoscuola Racing"
-  description="Contatti e sedi Autoscuola Racing a Favaro Veneto e Salzano."
->
+<BaseLayout title={title} description={description}>
   <section class="section">
     <div class="container">
       <div class="max-w-3xl">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Contatti</p>
-        <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-          Due sedi, riferimenti chiari, un contatto semplice.
-        </h1>
-        <p class="mt-6 text-lg leading-8 text-black/70">
-          Per evitare confusione, distinguiamo bene le due sedi. In questa fase mettiamo già la struttura giusta, poi aggiungiamo WhatsApp, orari e form.
-        </p>
+        <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
+        <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
       </div>
 
       <div class="mt-10 grid gap-6 md:grid-cols-2">

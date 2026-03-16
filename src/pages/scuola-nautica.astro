@@ -1,31 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageContent } from "../lib/content";
+
+const page = await getPageContent("scuola-nautica");
+const { title, description, heading, intro } = page.data;
 ---
 
-<BaseLayout
-  title="Scuola Nautica | Autoscuola Racing"
-  description="Scuola nautica con un approccio chiaro, graduale e orientato alla preparazione reale."
->
+<BaseLayout title={title} description={description}>
   <section class="section">
     <div class="container max-w-4xl">
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Scuola Nautica</p>
-      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-        Un percorso nautico serio, leggibile e seguito con attenzione.
-      </h1>
-      <p class="mt-6 text-lg leading-8 text-black/70">
-        Anche nella nautica applichiamo lo stesso approccio: chiarezza, metodo e accompagnamento concreto lungo tutto il percorso.
-      </p>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
+      <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
     </div>
   </section>
 
   <section class="section section-light">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">Cosa troverai</h2>
-      <ul class="mt-6 space-y-4 text-lg leading-8 text-black/70">
-        <li>Preparazione teorica con linguaggio chiaro</li>
-        <li>Percorso graduale e non dispersivo</li>
-        <li>Supporto organizzativo nei passaggi principali</li>
-      </ul>
+    <div class="container grid gap-6 md:grid-cols-3">
+      <div class="rounded-3xl bg-white p-6">
+        <h2 class="text-lg font-bold">Preparazione</h2>
+        <p class="mt-3 text-sm leading-6 text-black/70">
+          Preparazione teorica con linguaggio chiaro e progressivo.
+        </p>
+      </div>
+      <div class="rounded-3xl bg-white p-6">
+        <h2 class="text-lg font-bold">Percorso</h2>
+        <p class="mt-3 text-sm leading-6 text-black/70">
+          Un percorso leggibile, non dispersivo e costruito con metodo.
+        </p>
+      </div>
+      <div class="rounded-3xl bg-white p-6">
+        <h2 class="text-lg font-bold">Supporto</h2>
+        <p class="mt-3 text-sm leading-6 text-black/70">
+          Supporto organizzativo nei passaggi importanti del percorso nautico.
+        </p>
+      </div>
     </div>
   </section>
 </BaseLayout>

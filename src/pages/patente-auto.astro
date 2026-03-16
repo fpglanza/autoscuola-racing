@@ -1,20 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageContent } from "../lib/content";
+
+const page = await getPageContent("patente-auto");
+const { title, description, heading, intro } = page.data;
 ---
 
-<BaseLayout
-  title="Patente Auto | Autoscuola Racing"
-  description="Percorso patente auto tra Favaro Veneto e Salzano, con preparazione teorica e pratica accompagnata."
->
+<BaseLayout title={title} description={description}>
   <section class="section">
     <div class="container max-w-4xl">
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Patente Auto</p>
-      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-        Un percorso costruito per arrivare preparati, non semplicemente in fretta.
-      </h1>
-      <p class="mt-6 text-lg leading-8 text-black/70">
-        Ti aiutiamo ad affrontare teoria, pratica ed esame con un metodo chiaro, progressivo e pensato per farti sentire davvero pronto.
-      </p>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
+      <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
     </div>
   </section>
 
