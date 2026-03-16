@@ -1,25 +1,79 @@
 ---
 import { navigation } from "../../data/navigation";
+import logoColor from "../../assets/logo/logo-racing-color.png";
+import NavLink from "../ui/NavLink.astro";
 ---
 
-<header class="border-b border-black/10 bg-white">
-  <div class="container flex min-h-16 items-center justify-between gap-6 py-3">
-    <a href="/" class="flex items-center gap-3">
-      <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--racing-green)] font-bold text-[var(--racing-dark)]">
-        R
-      </div>
-      <div>
-        <div class="text-sm font-bold leading-tight">Autoscuola Racing</div>
-        <div class="text-xs text-black/60">Autoscuola &amp; Nautica</div>
-      </div>
+<header class="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur">
+  <div class="container flex min-h-20 items-center justify-between gap-6 py-3">
+    <a href="/" class="flex items-center">
+      <img
+        src={logoColor.src}
+        alt="Autoscuola Racing"
+        class="h-12 w-auto md:h-14"
+      />
     </a>
 
-    <nav class="hidden gap-6 md:flex">
+    <nav class="hidden items-center gap-6 md:flex">
       {navigation.map((item) => (
-        <a href={item.href} class="text-sm font-medium text-[var(--racing-dark)]/80 transition hover:text-[var(--racing-dark)]">
-          {item.label}
-        </a>
+        <NavLink href={item.href} label={item.label} />
       ))}
     </nav>
+
+    <div class="hidden md:block">
+      <a href="/contatti" class="btn-primary">Contattaci</a>
+    </div>
+
+    <button
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 md:hidden"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Apri menu"
+    >
+      <span class="sr-only">Apri menu</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-black/10 bg-white md:hidden"
+    data-mobile-menu
+  >
+    <div class="container flex flex-col gap-4 py-4">
+      {navigation.map((item) => (
+        <NavLink href={item.href} label={item.label} />
+      ))}
+
+      <div class="pt-2">
+        <a href="/contatti" class="btn-primary">Contattaci</a>
+      </div>
+    </div>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-mobile-menu]");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+</script>

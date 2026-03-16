@@ -1,0 +1,80 @@
+---
+interface Cta {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  label?: string;
+  heading: string;
+  intro: string;
+  primaryCta?: Cta;
+  secondaryCta?: Cta;
+  imageAlt?: string;
+  imageSrc?: string;
+  placeholderText?: string;
+}
+
+const {
+  label,
+  heading,
+  intro,
+  primaryCta,
+  secondaryCta,
+  imageAlt = "",
+  imageSrc,
+  placeholderText = "Placeholder immagine",
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        {label && (
+          <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-black/60">
+            {label}
+          </p>
+        )}
+
+        <h1 class="max-w-xl text-4xl font-bold leading-tight md:text-5xl">
+          {heading}
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-8 text-black/70">
+          {intro}
+        </p>
+
+        {(primaryCta || secondaryCta) && (
+          <div class="mt-8 flex flex-wrap gap-3">
+            {primaryCta && (
+              <a href={primaryCta.href} class="btn-primary">
+                {primaryCta.label}
+              </a>
+            )}
+
+            {secondaryCta && (
+              <a href={secondaryCta.href} class="btn-secondary">
+                {secondaryCta.label}
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div class="rounded-3xl bg-[var(--racing-light)] p-10">
+        <div class="flex aspect-[4/3] items-center justify-center rounded-2xl bg-white p-8">
+          {imageSrc ? (
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              class="max-h-full w-full object-contain"
+            />
+          ) : (
+            <div class="text-center text-black/40">{placeholderText}</div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
