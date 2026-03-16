@@ -1,0 +1,25 @@
+---
+import { navigation } from "../../data/navigation";
+---
+
+<header class="border-b border-black/10 bg-white">
+  <div class="container flex min-h-16 items-center justify-between gap-6 py-3">
+    <a href="/" class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--racing-green)] font-bold text-[var(--racing-dark)]">
+        R
+      </div>
+      <div>
+        <div class="text-sm font-bold leading-tight">Autoscuola Racing</div>
+        <div class="text-xs text-black/60">Autoscuola &amp; Nautica</div>
+      </div>
+    </a>
+
+    <nav class="hidden gap-6 md:flex">
+      {navigation.map((item) => (
+        <a href={item.href} class="text-sm font-medium text-[var(--racing-dark)]/80 transition hover:text-[var(--racing-dark)]">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
