@@ -8,6 +8,7 @@ export const locations = [
     email: "autoscuolaracing2@libero.it",
     whatsapp: "#",
     notes: "Sede legale e operativa",
+    mapUrl: "#",
   },
   {
     slug: "salzano",
@@ -18,5 +19,6 @@ export const locations = [
     email: "autoscuolaracing3@gmail.com",
     whatsapp: "#",
     notes: "Filiale operativa",
+    mapUrl: "#",
   },
 ];

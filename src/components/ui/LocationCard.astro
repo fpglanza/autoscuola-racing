@@ -7,9 +7,19 @@ interface Props {
   email: string;
   whatsapp?: string;
   notes?: string;
+  mapUrl?: string;
 }
 
-const { name, city, address, phone, email, whatsapp = "#", notes } = Astro.props;
+const {
+  name,
+  city,
+  address,
+  phone,
+  email,
+  whatsapp = "#",
+  notes,
+  mapUrl = "#",
+} = Astro.props;
 ---
 
 <article class="rounded-3xl border border-black/10 bg-white p-6">
@@ -28,5 +38,6 @@ const { name, city, address, phone, email, whatsapp = "#", notes } = Astro.props
     <a href={`tel:${phone.replaceAll(" ", "")}`} class="btn-secondary">Chiama</a>
     <a href={`mailto:${email}`} class="btn-secondary">Email</a>
     <a href={whatsapp} class="btn-primary">WhatsApp</a>
+    <a href={mapUrl} class="btn-secondary">Mappa</a>
   </div>
 </article>

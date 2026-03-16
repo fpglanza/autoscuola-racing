@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
+import { homeData } from "../data/home";
 
 const page = await getPageContent("home");
-const { title, description, heading, intro } = page.data;
+const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -12,20 +13,24 @@ const { title, description, heading, intro } = page.data;
       <div class="grid items-center gap-10 md:grid-cols-2">
         <div>
           <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-black/60">
-            Favaro Veneto · Salzano
+            {homeData.territoryLabel}
           </p>
 
           <h1 class="max-w-xl text-4xl font-bold leading-tight md:text-5xl">
-            {heading}
+            {homeData.hero.heading}
           </h1>
 
           <p class="mt-6 max-w-xl text-lg leading-8 text-black/70">
-            {intro}
+            {homeData.hero.intro}
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/patente-auto" class="btn-primary">Scopri Patente Auto</a>
-            <a href="/contatti" class="btn-secondary">Contattaci</a>
+            <a href={homeData.hero.primaryCta.href} class="btn-primary">
+              {homeData.hero.primaryCta.label}
+            </a>
+            <a href={homeData.hero.secondaryCta.href} class="btn-secondary">
+              {homeData.hero.secondaryCta.label}
+            </a>
           </div>
         </div>
 
@@ -40,34 +45,94 @@ const { title, description, heading, intro } = page.data;
 
   <section class="section section-light">
     <div class="container">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold">Un metodo chiaro e accompagnato</h2>
-        <p class="mt-4 text-lg leading-8 text-black/70">
-          Ti aiutiamo a costruire un percorso serio, leggibile e progressivo, senza fretta inutile e senza approcci impersonali.
-        </p>
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{homeData.locationsIntro.title}</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">{homeData.locationsIntro.body}</p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {homeData.locations.map((item) => (
+          <article class="rounded-3xl bg-white p-6">
+            <h3 class="text-xl font-bold">{item.title}</h3>
+            <p class="mt-4 text-sm leading-6 text-black/70">{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-8 max-w-3xl text-base leading-7 text-black/70">
+        {homeData.serviceNote}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{homeData.approach.title}</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">{homeData.approach.body}</p>
+        <div class="mt-6">
+          <a href={homeData.approach.cta.href} class="btn-secondary">
+            {homeData.approach.cta.label}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{homeData.paths.title}</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">{homeData.paths.intro}</p>
       </div>
 
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="rounded-3xl bg-white p-6">
-          <h3 class="text-lg font-bold">Comprensione</h3>
-          <p class="mt-3 text-sm leading-6 text-black/70">
-            La teoria viene affrontata per capire davvero, non solo per memorizzare.
-          </p>
-        </div>
+        {homeData.paths.items.map((item) => (
+          <article class="rounded-3xl bg-white p-6">
+            <h3 class="text-lg font-bold">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-black/70">{item.text}</p>
+            <div class="mt-5">
+              <a href={item.href} class="btn-secondary">Approfondisci</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-        <div class="rounded-3xl bg-white p-6">
-          <h3 class="text-lg font-bold">Progressione</h3>
-          <p class="mt-3 text-sm leading-6 text-black/70">
-            Ogni percorso segue tempi coerenti con il livello reale dello studente.
-          </p>
-        </div>
+  <section class="section">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{homeData.whyUs.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">{homeData.whyUs.body}</p>
+    </div>
+  </section>
 
-        <div class="rounded-3xl bg-white p-6">
-          <h3 class="text-lg font-bold">Accompagnamento</h3>
-          <p class="mt-3 text-sm leading-6 text-black/70">
-            L’obiettivo è arrivare pronti all’esame, con una preparazione solida.
-          </p>
-        </div>
+  <section class="section section-light">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{homeData.territory.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">{homeData.territory.body}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{homeData.practicalInfo.title}</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">{homeData.practicalInfo.body}</p>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        {homeData.practicalInfo.items.map((item) => (
+          <div class="rounded-2xl border border-black/10 p-4 text-sm font-medium text-black/70">
+            {item}
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8">
+        <a href={homeData.practicalInfo.primaryCta.href} class="btn-primary">
+          {homeData.practicalInfo.primaryCta.label}
+        </a>
       </div>
     </div>
   </section>

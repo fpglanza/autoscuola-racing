@@ -1,6 +1,6 @@
 ---
-title: "Scuola Nautica | Autoscuola Racing"
-description: "Scuola nautica con un approccio chiaro, graduale e orientato alla preparazione reale."
-heading: "Un percorso nautico serio, leggibile e seguito con attenzione."
-intro: "Anche nella nautica applichiamo lo stesso approccio: chiarezza, metodo e accompagnamento concreto lungo tutto il percorso."
+title: "Patente Nautica a Mestre e Salzano | Autoscuola Racing"
+description: "Patente nautica a Mestre e Salzano con corsi entro 12 miglia, metodo chiaro e supporto tecnico reale fino all’esame."
+heading: "Patente Nautica a Mestre e Salzano: prendi il comando."
+intro: "Vivere il mare o la laguna richiede competenza, rispetto delle regole e una preparazione tecnica rigorosa."
 ---

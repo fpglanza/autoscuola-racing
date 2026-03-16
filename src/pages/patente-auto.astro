@@ -1,39 +1,127 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
+import { patenteAutoData } from "../data/patente-auto";
+import FaqItem from "../components/ui/FaqItem.astro";
 
 const page = await getPageContent("patente-auto");
-const { title, description, heading, intro } = page.data;
+const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
   <section class="section">
-    <div class="container max-w-4xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Patente Auto</p>
-      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
-      <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
+    <div class="container">
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-black/60">
+            {patenteAutoData.hero.label}
+          </p>
+
+          <h1 class="max-w-xl text-4xl font-bold leading-tight md:text-5xl">
+            {patenteAutoData.hero.heading}
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-black/70">
+            {patenteAutoData.hero.intro}
+          </p>
+
+          <div class="mt-8">
+            <a href={patenteAutoData.hero.primaryCta.href} class="btn-primary">
+              {patenteAutoData.hero.primaryCta.label}
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-[var(--racing-light)] p-10">
+          <div class="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-black/15 bg-white text-center text-black/40">
+            Placeholder patente auto
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section section-light">
-    <div class="container grid gap-6 md:grid-cols-3">
-      <div class="rounded-3xl bg-white p-6">
-        <h2 class="text-lg font-bold">Teoria</h2>
-        <p class="mt-3 text-sm leading-6 text-black/70">
-          Lezioni e supporto per capire i concetti, non solo memorizzare quiz.
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{patenteAutoData.path.title}</h2>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {patenteAutoData.path.items.map((item) => (
+          <article class="rounded-3xl bg-white p-6">
+            <h3 class="text-lg font-bold">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-black/70">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{patenteAutoData.investment.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {patenteAutoData.investment.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{patenteAutoData.recovery.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {patenteAutoData.recovery.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{patenteAutoData.support.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {patenteAutoData.support.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">{patenteAutoData.nextSteps.title}</h2>
+        <p class="mt-4 text-lg leading-8 text-black/70">
+          {patenteAutoData.nextSteps.body}
         </p>
       </div>
-      <div class="rounded-3xl bg-white p-6">
-        <h2 class="text-lg font-bold">Guida</h2>
-        <p class="mt-3 text-sm leading-6 text-black/70">
-          Un accompagnamento pratico graduale, con attenzione alla sicurezza e alla consapevolezza.
-        </p>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {patenteAutoData.nextSteps.actions.map((item) => (
+          <article class="rounded-3xl bg-white p-6">
+            <h3 class="text-lg font-bold">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-black/70">{item.text}</p>
+            <div class="mt-5">
+              <a href={item.href} class="btn-secondary">Vai ai contatti</a>
+            </div>
+          </article>
+        ))}
       </div>
-      <div class="rounded-3xl bg-white p-6">
-        <h2 class="text-lg font-bold">Esame</h2>
-        <p class="mt-3 text-sm leading-6 text-black/70">
-          L’obiettivo è arrivare al momento dell’esame con solidità, non con fretta.
-        </p>
+
+      <div class="mt-8">
+        <a href={patenteAutoData.nextSteps.primaryCta.href} class="btn-primary">
+          {patenteAutoData.nextSteps.primaryCta.label}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold">FAQ – Tutto quello che devi sapere</h2>
+      </div>
+
+      <div class="mt-8 space-y-4">
+        {patenteAutoData.faq.map((item) => <FaqItem {...item} />)}
       </div>
     </div>
   </section>

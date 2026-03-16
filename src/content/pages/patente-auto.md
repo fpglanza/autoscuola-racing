@@ -1,6 +1,6 @@
 ---
-title: "Patente Auto | Autoscuola Racing"
-description: "Percorso patente auto tra Favaro Veneto e Salzano, con preparazione teorica e pratica accompagnata."
-heading: "Un percorso costruito per arrivare preparati, non semplicemente in fretta."
-intro: "Ti aiutiamo ad affrontare teoria, pratica ed esame con un metodo chiaro, progressivo e pensato per farti sentire davvero pronto."
+title: "Patente B a Mestre e Salzano | Autoscuola Racing"
+description: "Patente B a Mestre e Salzano con un percorso seguito passo dopo passo: teoria, guida, recupero punti e supporto personalizzato."
+heading: "Patente B a Mestre e Salzano: guida la tua indipendenza."
+intro: "Ottenere la patente è il primo passo verso una nuova libertà, ma la vera meta è sentirsi pronti a muoversi nel traffico in totale autonomia."
 ---

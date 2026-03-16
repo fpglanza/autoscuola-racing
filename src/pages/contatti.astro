@@ -1,24 +1,75 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LocationCard from "../components/ui/LocationCard.astro";
+import FormPlaceholder from "../components/ui/FormPlaceholder.astro";
 import { locations } from "../data/locations";
 import { getPageContent } from "../lib/content";
+import { contattiData } from "../data/contatti";
 
 const page = await getPageContent("contatti");
-const { title, description, heading, intro } = page.data;
+const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
   <section class="section">
-    <div class="container">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">Contatti</p>
-        <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">{heading}</h1>
-        <p class="mt-6 text-lg leading-8 text-black/70">{intro}</p>
-      </div>
+    <div class="container max-w-4xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">
+        {contattiData.hero.label}
+      </p>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
+        {contattiData.hero.heading}
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-black/70">
+        {contattiData.hero.intro}
+      </p>
+    </div>
+  </section>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
+  <section class="section section-light">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{contattiData.intro.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {contattiData.intro.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid gap-6 md:grid-cols-2">
         {locations.map((location) => <LocationCard {...location} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <FormPlaceholder
+        title={contattiData.centralForm.title}
+        body={contattiData.centralForm.body}
+        fields={contattiData.centralForm.fields}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{contattiData.quickActions.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {contattiData.quickActions.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-bold">{contattiData.mapSection.title}</h2>
+      <p class="mt-4 text-lg leading-8 text-black/70">
+        {contattiData.mapSection.body}
+      </p>
+
+      <div class="mt-8 flex aspect-[16/7] items-center justify-center rounded-3xl border border-dashed border-black/15 bg-white text-black/40">
+        Placeholder mappa / embed Google Maps
       </div>
     </div>
   </section>
