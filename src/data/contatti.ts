@@ -1,41 +1,61 @@
 export const contattiData = {
   hero: {
-    label: "Contatti",
-    heading: "Due sedi, riferimenti chiari, un contatto semplice.",
+    heading: "Contatti Autoscuola Racing",
     intro:
-      "Per evitare confusione, distinguiamo bene le due sedi e manteniamo un’impostazione ordinata. In questo modo chi arriva sul sito capisce subito dove scrivere, chiamare o presentarsi.",
+      "Siamo presenti con due sedi operative tra Favaro Veneto e Salzano, per offrirti un punto di riferimento chiaro e accessibile in ogni fase del tuo percorso.",
   },
 
-  intro: {
-    title: "Come abbiamo organizzato i contatti",
+  favaro: {
+    title: "Sede Favaro Veneto (Mestre)",
     body:
-      "Autoscuola Racing lavora con due sedi operative distinte, ciascuna con riferimenti propri. La pagina è progettata per rendere immediata la scelta della sede giusta, mantenendo però un’esperienza semplice e leggibile.",
-  },
-
-  centralForm: {
-    title: "Un solo form, con sede di riferimento",
-    body:
-      "Il form contatti sarà unico, ma con una selezione chiara della sede di riferimento. Così evitiamo dispersione, teniamo il percorso utente ordinato e rendiamo la gestione interna più semplice.",
-    fields: [
-      "Nome e cognome",
-      "Telefono",
-      "Email",
-      "Sede di riferimento",
-      "Interesse",
-      "Messaggio",
-      "Consenso privacy",
+      "Ci trovi nel cuore di Favaro Veneto. La nostra sede di Favaro Veneto è il punto di riferimento per chi cerca un ambiente accogliente e organizzato. Qui gestiamo le lezioni teoriche, le esercitazioni sui quiz e tutta la parte burocratica per le patenti auto e nautiche.",
+    details: [
+      "Indirizzo: Via Monte Cervino, 23/a, 30173 Venezia VE Favaro Veneto (VE)",
+      "Telefono: 041 630163",
+      "Email: [Inserire Email]",
+      "Contatto diretto whazzup",
     ],
   },
 
-  quickActions: {
-    title: "Contatto rapido",
+  salzano: {
+    title: "Sede Salzano",
     body:
-      "Per chi preferisce un contatto diretto, predisponiamo pulsanti chiari per chiamata, email e WhatsApp distinti per sede.",
+      "La tua autoscuola di fiducia a Salzano. Per gli allievi della zona, la sede di Salzano offre la stessa attenzione e il clima familiare che contraddistingue Autoscuola Racing. Un presidio territoriale comodo per gestire il tuo percorso verso la patente senza lunghi spostamenti.",
+    details: [
+      "Indirizzo: Via A. de Gasperi, 84, 30030 Salzano VE",
+      "Telefono: 041 574 6510",
+    ],
   },
 
-  mapSection: {
-    title: "Raggiungici",
+  hours: {
+    title: "Orari e modalità iscrizione",
     body:
-      "In questa fase prepariamo già lo spazio per mappa e indicazioni pratiche, così in seguito potremo aggiungere embed o link Google Maps senza rifare il layout.",
+      "Passa a trovarci quando preferisci. Non serve un appuntamento per venire a conoscerci. Siamo aperti nei seguenti orari per iscrizioni, informazioni sui corsi o semplicemente per darti un consiglio sul percorso più adatto a te:",
+    items: [
+      "Lunedì – Venerdì: 9 - 12 e 16-19 FAVARO",
+      "Lunedì – Venerdì: 9 - 12 e 16.30 -19 SALZANO",
+    ],
+    note:
+      "Visite mediche in sede: Organizziamo regolarmente sessioni con il medico in autoscuola per rinnovi patente e certificati d'idoneità. Contattaci per conoscere la data della prossima sessione disponibile e prenotare il tuo posto senza attese in uffici pubblici.",
+  },
+
+  whatsapp: {
+    title: "Contatto WhatsApp diretto",
+    body:
+      "Hai una domanda veloce? Scrivici direttamente in sede. Siamo a disposizione per chiarire ogni tuo dubbio su documenti, orari delle lezioni o visite mediche. Scegli la sede più comoda per te e inizia subito a parlare con noi: il nostro team ti risponderà in tempo reale per darti tutto il supporto di cui hai bisogno.",
+    items: [
+      {
+        label:
+          "Sede di Mestre – Favaro Veneto Per info su corsi e pratiche in terraferma.",
+        cta: "Scrivici a Mestre",
+        href: "#",
+      },
+      {
+        label:
+          "Sede di Salzano Per supporto diretto e iscrizioni a Salzano.",
+        cta: "Scrivici a Salzano",
+        href: "#",
+      },
+    ],
   },
 };

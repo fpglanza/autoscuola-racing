@@ -1,75 +1,97 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LocationCard from "../components/ui/LocationCard.astro";
-import FormPlaceholder from "../components/ui/FormPlaceholder.astro";
-import { locations } from "../data/locations";
 import { getPageContent } from "../lib/content";
 import { contattiData } from "../data/contatti";
+import PageHero from "../components/ui/PageHero.astro";
+import InfoCard from "../components/ui/InfoCard.astro";
 
 const page = await getPageContent("contatti");
 const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="section">
-    <div class="container max-w-4xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-black/60">
-        {contattiData.hero.label}
-      </p>
-      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-        {contattiData.hero.heading}
-      </h1>
-      <p class="mt-6 text-lg leading-8 text-black/70">
-        {contattiData.hero.intro}
-      </p>
-    </div>
-  </section>
+  <PageHero
+    label="Contatti"
+    heading={contattiData.hero.heading}
+    intro={contattiData.hero.intro}
+    placeholderText="Placeholder contatti / sedi"
+  />
 
   <section class="section section-light">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">{contattiData.intro.title}</h2>
-      <p class="mt-4 text-lg leading-8 text-black/70">
-        {contattiData.intro.body}
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="container">
       <div class="grid gap-6 md:grid-cols-2">
-        {locations.map((location) => <LocationCard {...location} />)}
+        <article class="rounded-3xl bg-white p-6">
+          <h2 class="text-2xl font-bold">{contattiData.favaro.title}</h2>
+          <p class="mt-4 text-base leading-7 text-black/70">
+            {contattiData.favaro.body}
+          </p>
+
+          <div class="mt-6 space-y-3">
+            {contattiData.favaro.details.map((item) => (
+              <div class="rounded-2xl border border-black/10 p-4 text-sm text-black/70">
+                {item}
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6">
+          <h2 class="text-2xl font-bold">{contattiData.salzano.title}</h2>
+          <p class="mt-4 text-base leading-7 text-black/70">
+            {contattiData.salzano.body}
+          </p>
+
+          <div class="mt-6 space-y-3">
+            {contattiData.salzano.details.map((item) => (
+              <div class="rounded-2xl border border-black/10 p-4 text-sm text-black/70">
+                {item}
+              </div>
+            ))}
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <section class="section">
+    <div class="container max-w-4xl">
+      <h2 class="text-3xl font-bold">{contattiData.hours.title}</h2>
+      <p class="mt-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+        {contattiData.hours.body}
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        {contattiData.hours.items.map((item) => (
+          <div class="rounded-2xl border border-black/10 p-4 text-sm font-medium text-black/70">
+            {item}
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-8 text-base leading-7 text-black/70">
+        {contattiData.hours.note}
+      </p>
+    </div>
+  </section>
+
   <section class="section section-light">
     <div class="container">
-      <FormPlaceholder
-        title={contattiData.centralForm.title}
-        body={contattiData.centralForm.body}
-        fields={contattiData.centralForm.fields}
-      />
-    </div>
-  </section>
+      <div class="max-w-4xl">
+        <h2 class="text-3xl font-bold">{contattiData.whatsapp.title}</h2>
+        <p class="mt-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+          {contattiData.whatsapp.body}
+        </p>
+      </div>
 
-  <section class="section">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">{contattiData.quickActions.title}</h2>
-      <p class="mt-4 text-lg leading-8 text-black/70">
-        {contattiData.quickActions.body}
-      </p>
-    </div>
-  </section>
-
-  <section class="section section-light">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">{contattiData.mapSection.title}</h2>
-      <p class="mt-4 text-lg leading-8 text-black/70">
-        {contattiData.mapSection.body}
-      </p>
-
-      <div class="mt-8 flex aspect-[16/7] items-center justify-center rounded-3xl border border-dashed border-black/15 bg-white text-black/40">
-        Placeholder mappa / embed Google Maps
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {contattiData.whatsapp.items.map((item) => (
+          <InfoCard
+            title={item.label}
+            text=""
+            href={item.href}
+            ctaLabel={item.cta}
+          />
+        ))}
       </div>
     </div>
   </section>

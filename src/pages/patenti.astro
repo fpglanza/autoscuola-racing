@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { patentiData } from "../data/patenti";
+import PageHero from "../components/ui/PageHero.astro";
+---
+
+<BaseLayout title="Le nostre patenti">
+  <!-- HERO -->
+  <PageHero
+    label="Patenti"
+    heading={patentiData.hero.heading}
+    intro={patentiData.hero.intro}
+  />
+
+  <!-- LISTA PATENTI -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <div class="space-y-4">
+        {patentiData.items.map((item, i) => (
+          <div class="border border-black/10 rounded-2xl overflow-hidden">
+            <!-- HEADER -->
+            <button
+              class="w-full text-left p-4 flex justify-between items-center font-semibold"
+              data-toggle={i}
+            >
+              <span>{item.title}</span>
+              <span
+                class="transition-transform duration-200"
+                data-icon={i}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </button>
+
+            <!-- CONTENT -->
+            <div
+              class={`px-4 pb-4 text-sm text-black/70 space-y-3 ${
+                i < 3 ? "" : "hidden"
+              }`}
+              data-content={i}
+            >
+              {item.content.map((text) => (
+                <p>{text}</p>
+              ))}
+
+              <div class="pt-2">
+                <a href={item.cta.href} class="btn-secondary text-sm">
+                  {item.cta.label}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const toggles = document.querySelectorAll("[data-toggle]");
+
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-toggle");
+
+      const content = document.querySelector(
+        `[data-content="${id}"]`
+      );
+
+      const icon = document.querySelector(
+        `[data-icon="${id}"]`
+      );
+
+      const isOpen = !content.classList.contains("hidden");
+
+      content.classList.toggle("hidden");
+
+      if (icon) {
+        icon.style.transform = isOpen
+          ? "rotate(0deg)"
+          : "rotate(180deg)";
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-content]").forEach((el, i) => {
+    if (!el.classList.contains("hidden")) {
+      const icon = document.querySelector(`[data-icon="${i}"]`);
+      if (icon) icon.style.transform = "rotate(180deg)";
+    }
+  });
+</script>

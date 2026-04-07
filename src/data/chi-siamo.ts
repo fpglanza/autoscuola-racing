@@ -1,79 +1,53 @@
 export const chiSiamoData = {
   hero: {
-    label: "Chi siamo / Il nostro metodo",
-    heading: "Non ti accompagniamo solo all’esame. Ti accompagniamo finché sei pronto.",
+    heading: "Perché non tutte le autoscuole sono uguali.",
     intro:
-      "Il nostro lavoro non è semplicemente farti superare un test. È aiutarti a costruire sicurezza, comprensione e autonomia reale, con un percorso serio e progressivo.",
+      "Scegliere un metodo significa scegliere come vuoi vivere questo percorso. In Autoscuola Racing non sei un numero di pratica, ma una persona che entra a far parte della nostra famiglia. Puntiamo tutto sul rapporto umano: farti sentire a tuo agio, eliminare l'ansia e accompagnarti con la serenità di chi sa di avere qualcuno su cui contare.\nPerché imparare a guidare è più semplice, se ti senti a casa.",
+    cta: {
+      label: "Inizia il tuo percorso con noi",
+      href: "/contatti",
+    },
   },
 
-  introSection: {
-    title: "Perché il metodo conta davvero",
+  journey: {
+    title: "Come si prende davvero la patente",
     body:
-      "Molti studenti arrivano convinti che per prendere la patente basti memorizzare quiz e fare qualche guida. In realtà il problema nasce quando, davanti al traffico reale o a una situazione nuova, manca una comprensione solida. Per questo il nostro approccio parte dal metodo, non dalla scorciatoia.",
+      "Prendere la patente è un’avventura che inizia molto prima di salire in auto.\nNon si tratta di fare una maratona di quiz o accumulare ore di guida in silenzio. Il vero percorso è un’evoluzione naturale che viviamo insieme: partiamo dal toglierti ogni dubbio sulle regole della strada, per arrivare alla padronanza del veicolo senza che tu te ne accorga.\nTi insegniamo a leggere il traffico con calma e a prevedere le situazioni, trasformando un obbligo di legge in una nuova sicurezza personale. È un percorso fatto di ascolto, risate e piccoli traguardi quotidiani, per farti arrivare al giorno dell'esame con il sorriso di chi sa di avercela già fatta.",
   },
 
-  pillars: [
-    {
-      title: "Comprensione prima della memoria",
-      text:
-        "Non lavoriamo sulla ripetizione meccanica. Ti aiutiamo a capire la logica delle regole e il senso delle situazioni stradali.",
-    },
-    {
-      title: "Percorso progressivo",
-      text:
-        "Ogni studente ha tempi diversi. Il nostro obiettivo è costruire continuità, non mettere pressione inutile.",
-    },
-    {
-      title: "Presenza nei momenti critici",
-      text:
-        "Quando emergono insicurezze, errori ricorrenti o blocchi emotivi, interveniamo con più attenzione e chiarezza.",
-    },
-  ],
-
-  path: {
-    title: "Come lavoriamo",
-    steps: [
-      {
-        title: "1. Ascoltiamo il punto di partenza",
-        text:
-          "Capire se il problema è organizzativo, teorico, pratico o emotivo ci permette di impostare il percorso nel modo corretto.",
-      },
-      {
-        title: "2. Costruiamo basi solide",
-        text:
-          "Teoria e pratica vengono affrontate come parti di un unico percorso, non come fasi isolate da superare in fretta.",
-      },
-      {
-        title: "3. Correggiamo il metodo",
-        text:
-          "Se uno studente studia male o affronta la guida con rigidità, interveniamo sul processo, non solo sul singolo errore.",
-      },
-      {
-        title: "4. Valutiamo la reale prontezza",
-        text:
-          "L’esame arriva quando il livello è maturo. Non lavoriamo per tentativi, ma per consolidamento.",
-      },
+  structure: {
+    title: "Struttura del percorso",
+    items: [
+      "Teoria Analitica: Lezioni in aula con docenti pronti a chiarire ogni dubbio, superando lo studio solitario sull'app.",
+      "Valutazione Intermedia: Verifichiamo la tenuta della preparazione prima di programmare l'esame teorico.",
+      "Addestramento Pratico Graduale: Dalle manovre di base in aree protette alla gestione delle situazioni complesse nel traffico di Mestre e Salzano.",
+      "Perfezionamento: Rifinitura della sensibilità di guida e della consapevolezza dei rischi.",
     ],
   },
 
-  difference: {
-    title: "Cosa ci distingue",
+  app: {
+    title: "Tutto il tuo percorso, a portata di smartphone.",
     body:
-      "La differenza non è solo nei contenuti, ma nell’atteggiamento. Non riduciamo il percorso a una pratica da sbrigare: lo trattiamo come un passaggio importante verso l’autonomia. Questo cambia il modo in cui insegniamo, correggiamo e accompagniamo.",
+      "Per offrirti un’esperienza davvero completa, integriamo nel tuo corso un’applicazione dedicata che ti accompagna ovunque. Un filo diretto con la nostra autoscuola per rendere lo studio agile e organizzato.",
+    items: [
+      "Monitorare il tuo percorso: Visualizza in tempo reale i tuoi progressi, le lezioni frequentate e gli obiettivi raggiunti, per avere sempre chiaro quanto manca al traguardo.",
+      "Quiz Ministeriali Dettagliati: Esercitati con i database ufficiali e simulazioni d'esame veritiere. L'app analizza i tuoi errori, aiutandoci a capire insieme su quali argomenti lavorare di più in aula.",
+      "Rivedere le Videolezioni: Hai saltato un passaggio o vuoi rinfrescare un concetto? Accedi ai contenuti video per ripassare la teoria in qualsiasi momento, con la massima flessibilità.",
+    ],
   },
 
-  teamIntro: {
-    title: "Il team",
+  support: {
+    title: "Il supporto dedicato",
     body:
-      "Questa sezione è già pronta per essere aggiornata con nomi, ruoli e foto reali. Per ora teniamo i placeholder.",
+      "La tranquillità di un genitore nasce dalla qualità di chi accompagna suo figlio.\nSappiamo che per una famiglia la sicurezza del ragazzo è la priorità assoluta. Per questo il nostro supporto non è solo tecnico, ma umano. I nostri istruttori non sono semplici esaminatori, ma mentori che sanno calibrare la tensione e incoraggiare nei momenti di difficoltà. Gestiamo con cura il passaggio dalla dipendenza all'autonomia, mantenendo un dialogo aperto sulla reale preparazione dell'allievo e intervenendo con sessioni mirate laddove riscontriamo incertezze o timori.",
   },
 
-  cta: {
-    title: "Vuoi capire se questo percorso è adatto a te?",
+  readiness: {
+    title: "Quando uno studente è davvero pronto",
     body:
-      "Puoi contattarci e capire insieme a noi da quale sede partire e quale percorso ha più senso per la tua situazione.",
-    primary: {
-      label: "Vai ai contatti",
+      "In Autoscuola Racing, essere \"pronti\" non coincide necessariamente con il termine delle ore minime di legge.\nUno studente è pronto quando il suo \"rumore mentale\" si azzera e le manovre diventano fluide e consapevoli. La nostra autorità educativa si esprime nel dirti la verità: ti portiamo all'esame solo quando la tua padronanza del mezzo e della strada è solida. Questa onestà protegge l'allievo dalla frustrazione di una bocciatura e garantisce che, il giorno dopo aver preso la patente, sia in grado di guidare da solo nel traffico reale con assoluta serenità.",
+    cta: {
+      label: "Inizia il percorso ora",
       href: "/contatti",
     },
   },

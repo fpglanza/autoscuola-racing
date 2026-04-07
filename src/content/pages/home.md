@@ -1,6 +1,6 @@
 ---
-title: "Autoscuola Racing | Favaro Veneto e Salzano"
-description: "Autoscuola e scuola nautica tra Favaro Veneto e Salzano. Un percorso chiaro, serio e accompagnato."
-heading: "Un percorso serio, chiaro e accompagnato per prendere la patente."
-intro: "Autoscuola Racing ti segue passo dopo passo, con un metodo pensato per portarti all’esame quando sei davvero pronto."
+title: "Autoscuola Racing | Autoscuola a Mestre, Favaro Veneto e Salzano"
+description: "Sentirsi a casa, anche al volante. Dimentica l'ansia da esame: in Autoscuola Racing a Favaro Veneto e Salzano entri in una famiglia che ti guida con metodo e rispetto."
+heading: "Autoscuola Racing: la tua autonomia, accompagnata."
+intro: "Scegliere la nostra autoscuola significa vivere un rito di passaggio consapevole."
 ---

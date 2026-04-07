@@ -1,6 +1,6 @@
 ---
 title: "Patente Nautica a Mestre e Salzano | Autoscuola Racing"
-description: "Patente nautica a Mestre e Salzano con corsi entro 12 miglia, metodo chiaro e supporto tecnico reale fino all’esame."
+description: "Prendi il largo con consapevolezza. A Favaro Veneto, la tua patente nautica è un’esperienza reale, non un test a crocette. Formazione tecnica e supporto umano."
 heading: "Patente Nautica a Mestre e Salzano: prendi il comando."
 intro: "Vivere il mare o la laguna richiede competenza, rispetto delle regole e una preparazione tecnica rigorosa."
 ---
