@@ -6,7 +6,7 @@ export const contattiData = {
   },
 
   favaro: {
-    title: "Sede Favaro Veneto (Mestre)",
+    title: "Sede Favaro Veneto",
     body:
       "Ci trovi nel cuore di Favaro Veneto. La nostra sede di Favaro Veneto è il punto di riferimento per chi cerca un ambiente accogliente e organizzato. Qui gestiamo le lezioni teoriche, le esercitazioni sui quiz e tutta la parte burocratica per le patenti auto e nautiche.",
     details: [

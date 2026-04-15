@@ -1,22 +1,56 @@
 @import "tailwindcss";
 
+/* =====================
+   DESIGN TOKENS
+===================== */
+
 :root {
+  /* NUOVO DESIGN SYSTEM */
+  --color-primary: #D4FF00;
+  --color-secondary: #12135D;
+  --color-accent: #2124BD;
+  --color-text: #2C3E50;
+  --color-bg: #FFFFFF;
+
+  /* LEGACY (temporaneo) */
   --racing-green: #8dc63f;
   --racing-accent: #8dda20;
   --racing-dark: #071a30;
   --racing-light: #f7f7f7;
+
   --container: 72rem;
+
+  /* FONT */
+  --font-heading: 'Exo 2', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
 }
+
+/* =====================
+   BASE
+===================== */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--racing-dark);
-  background: white;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.02em;
 }
 
 a {
@@ -29,34 +63,13 @@ img {
   max-width: 100%;
 }
 
+/* =====================
+   LAYOUT
+===================== */
+
 .container {
   width: min(100% - 2rem, var(--container));
   margin-inline: auto;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.75rem 1rem;
-  border-radius: 9999px;
-  background: var(--racing-green);
-  color: var(--racing-dark);
-  font-weight: 700;
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.75rem 1rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(7, 26, 48, 0.15);
-  background: white;
-  color: var(--racing-dark);
-  font-weight: 700;
 }
 
 .section {
@@ -64,8 +77,70 @@ img {
 }
 
 .section-light {
-  background: var(--racing-light);
+  background: var(--color-bg);
 }
+
+/* =====================
+   BUTTONS
+===================== */
+
+/* NUOVO STANDARD */
+.btn-racing-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: none;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
+  box-shadow: 0 8px 20px rgba(33, 36, 189, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-racing-primary:hover {
+  transform: translateY(-3px);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  box-shadow: 0 12px 28px rgba(33, 36, 189, 0.45);
+}
+
+/* SECONDARIO (coerente con brand) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+
+  border-radius: 9999px;
+  border: 2px solid var(--color-secondary);
+
+  background: transparent;
+  color: var(--color-secondary);
+
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: none;
+
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary); /* 👈 LIME */
+}
+
+/* =====================
+   UTILITIES
+===================== */
 
 .sr-only {
   position: absolute;

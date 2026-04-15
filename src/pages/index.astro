@@ -2,123 +2,228 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { homeData } from "../data/home";
-import logoFull from "../assets/logo/logo-racing-full.png";
-import PageHero from "../components/ui/PageHero.astro";
-import InfoCard from "../components/ui/InfoCard.astro";
 
 const page = await getPageContent("home");
 const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
-  <PageHero
-    label={homeData.territoryLabel}
-    heading={homeData.hero.heading}
-    intro={homeData.hero.intro}
-    primaryCta={homeData.hero.primaryCta}
-    secondaryCta={homeData.hero.secondaryCta}
-    imageSrc={logoFull.src}
-    imageAlt="Autoscuola Racing"
-  />
-
-  <section class="section section-light">
-    <div class="container">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl font-bold">{homeData.locationsIntro.title}</h2>
-        <p class="mt-4 text-lg leading-8 text-black/70">
-          {homeData.locationsIntro.body}
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
-        {homeData.locations.map((item) => (
-          <InfoCard title={item.title} text={item.text} />
-        ))}
-      </div>
-
-      <p class="mt-8 max-w-3xl text-base leading-7 text-black/70">
-        {homeData.serviceNote}
+  <!-- HERO -->
+  <section class="section pt-10 md:pt-16">
+    <div class="container max-w-4xl text-center">
+      <p class="mb-4 text-xs uppercase tracking-[0.25em] text-[var(--color-secondary)]/50">
+        {homeData.hero.label}
       </p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl font-bold">{homeData.approach.title}</h2>
-        <p class="mt-4 text-lg leading-8 text-black/70">
-          {homeData.approach.body}
-        </p>
-        <div class="mt-6">
-          <a href={homeData.approach.cta.href} class="btn-secondary">
-            {homeData.approach.cta.label}
-          </a>
+      <h1 class="text-[34px] leading-[1.05] text-[var(--color-secondary)] md:text-[52px] xl:text-[64px]">
+        <span class="relative inline-block font-extrabold italic uppercase">
+          {homeData.hero.heading}
+          <span class="absolute left-0 top-0 -z-10 translate-x-[3px] translate-y-[3px] text-[var(--color-primary)] opacity-80">
+            {homeData.hero.heading}
+          </span>
+        </span>
+      </h1>
+
+      <div class="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+        {homeData.hero.intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+
+      <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="/patente-auto" class="btn-secondary">
+          Scopri di più
+        </a>
+
+        <a href={homeData.hero.cta.href} class="btn-racing-primary">
+          {homeData.hero.cta.label}
+        </a>
+      </div>
+    </div>
+
+    <div class="container mt-14">
+      <div class="relative overflow-hidden rounded-2xl">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(212,255,0,0.25),transparent_60%)]"></div>
+
+        <div class="relative flex min-h-[220px] items-center justify-center bg-gradient-to-br from-[rgba(212,255,0,0.12)] to-[rgba(33,36,189,0.04)] md:min-h-[320px]">
+          <p class="text-sm uppercase tracking-wide text-[var(--color-secondary)]/40">
+            Immagine guida / auto (placeholder)
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl font-bold">{homeData.paths.title}</h2>
-        <p class="mt-4 text-lg leading-8 text-black/70">
+  <!-- AUTOSCUOLA A FAVARO E SALZANO -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <h2 class="text-center text-[30px] uppercase leading-tight text-[var(--color-secondary)] md:text-[40px]">
+        {homeData.locationsIntro.title}
+      </h2>
+
+      <p class="mx-auto mt-6 max-w-3xl text-center text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+        {homeData.locationsIntro.body}
+      </p>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-2 md:gap-10">
+        {homeData.locations.map((item) => (
+          <article class="border-t border-black/10 pt-6">
+            <h3 class="text-[24px] uppercase leading-[1.15] text-[var(--color-secondary)] md:text-[26px]">
+              {item.title}
+            </h3>
+
+            <p class="mt-5 text-sm leading-7 text-[var(--color-text)]/80 md:text-base">
+              {item.text}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-10 max-w-3xl text-center text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+        {homeData.serviceNote}
+      </p>
+    </div>
+  </section>
+
+  <!-- IL NOSTRO APPROCCIO -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="mb-4 text-xs uppercase tracking-[0.25em] text-[var(--color-secondary)]/50">
+          {homeData.approach.label}
+        </p>
+
+        <h2 class="text-[30px] uppercase leading-tight text-[var(--color-secondary)] md:text-[40px]">
+          {homeData.approach.title}
+        </h2>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+        {homeData.approach.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href={homeData.approach.cta.href} class="btn-racing-primary">
+          {homeData.approach.cta.label}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- I PERCORSI -->
+  <section class="section">
+    <div class="container max-w-5xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-[30px] leading-tight text-[var(--color-secondary)] md:text-[40px]">
+          {homeData.paths.title}
+        </h2>
+
+        <p class="mt-6 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
           {homeData.paths.intro}
         </p>
       </div>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        {homeData.paths.items.map((item) => (
-          <InfoCard
-            title={item.title}
-            text={item.text}
-            href={item.href}
-            ctaLabel="Approfondisci"
-          />
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {homeData.paths.items.map((item, index) => (
+          <article class="flex h-full min-h-[380px] flex-col border-t border-black/10 pt-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]/50">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+
+            <h3 class="mt-4 text-[24px] leading-[1.15] text-[var(--color-secondary)] md:text-[28px]">
+              {item.title}
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-[var(--color-text)]/80 md:text-base">
+              {item.text}
+            </p>
+
+            <!-- spazio controllato + allineamento -->
+            <div class="mt-auto pt-6 flex justify-center">
+              <a href={item.href} class="btn-secondary">
+                {item.ctaLabel}
+              </a>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- PERCHÉ SCEGLIERE IL METODO RACING -->
   <section class="section">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">{homeData.whyUs.title}</h2>
-      <p class="mt-4 text-lg leading-8 text-black/70">
-        {homeData.whyUs.body}
-      </p>
+    <div class="container max-w-4xl">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-center text-[30px] uppercase leading-tight text-[var(--color-secondary)] md:text-[40px]">
+          {homeData.whyUs.title}
+        </h2>
+
+        <div class="mt-8 space-y-5 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+          {homeData.whyUs.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold">{homeData.territory.title}</h2>
-      <p class="mt-4 text-lg leading-8 text-black/70">
-        {homeData.territory.body}
-      </p>
+  <!-- STORIA E TERRITORIO -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-center text-[30px] uppercase leading-tight text-[var(--color-secondary)] md:text-[40px]">
+          {homeData.territory.title}
+        </h2>
+
+        <div class="mt-8 space-y-5 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
+          {homeData.territory.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl font-bold">{homeData.practicalInfo.title}</h2>
-        <p class="mt-4 text-lg leading-8 text-black/70">
+  <!-- INFO PRATICHE E CONTATTI -->
+  <section class="section pb-16">
+    <div class="container max-w-5xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-[30px]  leading-tight text-[var(--color-secondary)] md:text-[40px]">
+          {homeData.practicalInfo.title}
+        </h2>
+
+        <p class="mt-6 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
           {homeData.practicalInfo.body}
         </p>
       </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-2">
-        {homeData.practicalInfo.items.map((item) => (
-          <div class="rounded-2xl border border-black/10 p-4 text-sm font-medium text-black/70">
-            {item}
-          </div>
+      <div class="mt-12 grid gap-10 md:grid-cols-2">
+        {homeData.practicalInfo.locations.map((item, index) => (
+          <article class="border-t border-black/10 pt-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]/50">
+              {index === 0 ? "Sede 01" : "Sede 02"}
+            </p>
+
+            <p class="mt-4 text-base leading-8 text-[var(--color-text)]/80">
+              {item}
+            </p>
+          </article>
         ))}
       </div>
 
-      <div class="mt-8">
-        <a href={homeData.practicalInfo.primaryCta.href} class="btn-primary">
-          {homeData.practicalInfo.primaryCta.label}
-        </a>
+      <div class="mx-auto mt-12 max-w-4xl border-t border-black/10 pt-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]/50">
+          Visite mediche in sede
+        </p>
+
+        <p class="mt-4 text-base leading-8 text-[var(--color-text)]/80">
+          {homeData.practicalInfo.medical}
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+        {homeData.practicalInfo.ctas.map((cta) => (
+          <a
+            href={cta.href}
+            class={cta.variant === "primary" ? "btn-racing-primary" : "btn-secondary"}
+          >
+            {cta.label}
+          </a>
+        ))}
       </div>
     </div>
   </section>

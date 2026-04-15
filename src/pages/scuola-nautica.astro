@@ -25,7 +25,7 @@ const { title, description } = page.data;
           </p>
 
           <div class="mt-8">
-            <a href={scuolaNauticaData.hero.primaryCta.href} class="btn-primary">
+            <a href={scuolaNauticaData.hero.primaryCta.href} class="btn-racing-primary">
               {scuolaNauticaData.hero.primaryCta.label}
             </a>
           </div>
@@ -89,7 +89,7 @@ const { title, description } = page.data;
         {scuolaNauticaData.contact.actions.map((action) => (
           <a
             href={action.href}
-            class={action.label.includes("contatti") ? "btn-primary" : "btn-secondary"}
+            class={action.label.includes("contatti") ? "btn-racing-primary" : "btn-secondary"}
           >
             {action.label}
           </a>

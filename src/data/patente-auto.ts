@@ -42,7 +42,7 @@ export const patenteAutoData = {
     body:
       "Iniziare è semplice. Puoi venire a trovarci in una delle nostre sedi per conoscere i docenti e vedere come lavoriamo, oppure scriverci per avere dettagli sui calendari dei corsi e sulle prossime sessioni di visite mediche.",
     locations: [
-      "Sede di Favaro Veneto (Mestre): [Inserire Contatto]",
+      "Sede di Favaro Veneto: [Inserire Contatto]",
       "Sede di Salzano: [Inserire Contatto]",
     ],
     ctas: [

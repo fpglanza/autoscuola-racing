@@ -13,7 +13,7 @@ export const praticheData = {
   renewal: {
     title: "Rinnovo patente con visita in sede",
     body:
-      "Dimentica le code agli sportelli o le lunghe attese. Presso le nostre sedi di Favaro Veneto (Mestre) e Salzano, organizziamo regolarmente sessioni con il medico autorizzato.",
+      "Dimentica le code agli sportelli o le lunghe attese. Presso le nostre sedi di Favaro Veneto e Salzano, organizziamo regolarmente sessioni con il medico autorizzato.",
     items: [
       "Comodità: Prenoti il tuo appuntamento e in pochi minuti completi la visita.",
       "Velocità: Riceverai la nuova patente direttamente a casa o in sede in tempi brevissimi.",
