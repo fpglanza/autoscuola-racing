@@ -1,6 +1,6 @@
 ---
 import { navigation } from "../../data/navigation";
-import logoColor from "../../assets/logo/logo-racing-color.png";
+import logoColor from "../../assets/logo/src/assets/logo/Asset 14.png";
 
 const desktopNavigation = navigation.filter((item) => item.href !== "/");
 
@@ -37,7 +37,7 @@ const rightNavigation = [
 
           <a href="/" class="mx-2 flex items-center justify-center">
             <img
-              src="src/assets/logo/Asset 14.png"
+              src={logoColor.src}
               alt="Autoscuola Racing"
               class="h-11 w-auto"
             />
