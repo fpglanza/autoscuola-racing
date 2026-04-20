@@ -38,7 +38,7 @@ const isActive = (href: string) => currentPath === href;
                 {item.label}
                 <span
                   class:list={[
-                    "absolute left-0 top-full mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
+                    "absolute left-0 top-full z-10 mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
                     isActive(item.href) ? "w-full opacity-100" : "w-0 opacity-0",
                   ]}
                 />
@@ -69,7 +69,7 @@ const isActive = (href: string) => currentPath === href;
                     {item.label}
                     <span
                       class:list={[
-                        "absolute left-0 top-full mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
+                        "absolute left-0 top-full z-10 mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
                         isActive(item.href) ? "w-full opacity-100" : "w-0 opacity-0",
                       ]}
                     />
@@ -100,7 +100,7 @@ const isActive = (href: string) => currentPath === href;
                   {item.label}
                   <span
                     class:list={[
-                      "absolute left-0 top-full mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
+                      "absolute left-0 top-full z-10 mt-1 h-[2px] rounded-full bg-[#D4FF00] transition-all duration-200",
                       isActive(item.href) ? "w-full opacity-100" : "w-0 opacity-0",
                     ]}
                   />
@@ -155,11 +155,19 @@ const isActive = (href: string) => currentPath === href;
                   aria-controls="mobile-patenti-submenu"
                   class="flex w-full items-center justify-between text-left text-base font-bold uppercase tracking-[0.08em] text-[var(--color-secondary)]"
                 >
-                  <span>{item.label}</span>
+                  <span
+                    class:list={[
+                      isActive(item.href)
+                        ? "underline decoration-[var(--color-primary)] decoration-2 underline-offset-8"
+                        : "",
+                    ]}
+                  >
+                    {item.label}
+                  </span>
 
                   <span
                     data-mobile-patenti-icon
-                    class:list={[
+                    class:list([
                       "transition-transform duration-200",
                       isActive(item.href) ? "rotate-180" : "",
                     ]}
