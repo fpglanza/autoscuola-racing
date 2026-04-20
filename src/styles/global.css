@@ -42,8 +42,19 @@ body {
 h1 {
   font-family: var(--font-heading);
   font-weight: 800;
+  font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+
+  letter-spacing: 0.05em;
+  line-height: 1.05;
+
+  color: var(--color-secondary);
+
+  /* effetto "doppio testo" */
+  text-shadow: -5px 0px 0 var(--color-primary);
+
+  /* migliora rendering */
+  display: block;
 }
 
 h2, h3 {

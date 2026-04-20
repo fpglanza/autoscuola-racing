@@ -5,28 +5,36 @@ import PageHero from "../components/ui/PageHero.astro";
 ---
 
 <BaseLayout title="Le nostre patenti">
-  <!-- HERO -->
   <PageHero
     label="Patenti"
     heading={patentiData.hero.heading}
     intro={patentiData.hero.intro}
   />
 
-  <!-- LISTA PATENTI -->
   <section class="section">
     <div class="container max-w-4xl">
       <div class="space-y-4">
-        {patentiData.items.map((item, i) => (
-          <div class="border border-black/10 rounded-2xl overflow-hidden">
-            <!-- HEADER -->
+        {patentiData.items.map((item) => (
+          <div
+            id={item.slug}
+            class="scroll-mt-36 overflow-hidden rounded-2xl border border-black/10"
+            data-accordion-item={item.slug}
+          >
             <button
-              class="w-full text-left p-4 flex justify-between items-center font-semibold"
-              data-toggle={i}
+              type="button"
+              class="flex w-full items-center justify-between p-4 text-left"
+              data-toggle={item.slug}
+              aria-expanded="false"
+              aria-controls={`content-${item.slug}`}
             >
-              <span>{item.title}</span>
+              <span class="text-[20px] text-[var(--color-secondary)] md:text-[24px]">
+                {item.title}
+              </span>
+
               <span
                 class="transition-transform duration-200"
-                data-icon={i}
+                data-icon={item.slug}
+                aria-hidden="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -41,19 +49,17 @@ import PageHero from "../components/ui/PageHero.astro";
               </span>
             </button>
 
-            <!-- CONTENT -->
             <div
-              class={`px-4 pb-4 text-sm text-black/70 space-y-3 ${
-                i < 3 ? "" : "hidden"
-              }`}
-              data-content={i}
+              id={`content-${item.slug}`}
+              class="hidden space-y-3 px-4 pb-4 text-sm text-[var(--color-text)]/80"
+              data-content={item.slug}
             >
               {item.content.map((text) => (
                 <p>{text}</p>
               ))}
 
               <div class="pt-2">
-                <a href={item.cta.href} class="btn-secondary text-sm">
+                <a href={item.cta.href} class="btn-secondary">
                   {item.cta.label}
                 </a>
               </div>
@@ -66,36 +72,86 @@ import PageHero from "../components/ui/PageHero.astro";
 </BaseLayout>
 
 <script>
-  const toggles = document.querySelectorAll("[data-toggle]");
+  const items = document.querySelectorAll("[data-accordion-item]");
 
-  toggles.forEach((btn) => {
+  function closeAll() {
+    items.forEach((item) => {
+      const id = item.getAttribute("data-accordion-item");
+      const button = document.querySelector(`[data-toggle="${id}"]`);
+      const content = document.querySelector(`[data-content="${id}"]`);
+      const icon = document.querySelector(`[data-icon="${id}"]`);
+
+      button?.setAttribute("aria-expanded", "false");
+      content?.classList.add("hidden");
+
+      if (icon instanceof HTMLElement) {
+        icon.style.transform = "rotate(0deg)";
+      }
+    });
+  }
+
+  function scrollWithOffset(element) {
+    const y = element.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
+  function openItem(id, shouldScroll = true) {
+    const button = document.querySelector(`[data-toggle="${id}"]`);
+    const content = document.querySelector(`[data-content="${id}"]`);
+    const icon = document.querySelector(`[data-icon="${id}"]`);
+    const wrapper = document.getElementById(id);
+
+    if (!button || !content || !wrapper) return;
+
+    closeAll();
+
+    button.setAttribute("aria-expanded", "true");
+    content.classList.remove("hidden");
+
+    if (icon instanceof HTMLElement) {
+      icon.style.transform = "rotate(180deg)";
+    }
+
+    if (shouldScroll) {
+      requestAnimationFrame(() => {
+        scrollWithOffset(wrapper);
+      });
+    }
+  }
+
+  function syncFromHash(shouldScroll = true) {
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash) {
+      openItem(hash, shouldScroll);
+    } else {
+      closeAll();
+    }
+  }
+
+  document.querySelectorAll("[data-toggle]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-toggle");
+      const content = document.querySelector(`[data-content="${id}"]`);
+      const isOpen = content && !content.classList.contains("hidden");
 
-      const content = document.querySelector(
-        `[data-content="${id}"]`
-      );
+      if (!id) return;
 
-      const icon = document.querySelector(
-        `[data-icon="${id}"]`
-      );
-
-      const isOpen = !content.classList.contains("hidden");
-
-      content.classList.toggle("hidden");
-
-      if (icon) {
-        icon.style.transform = isOpen
-          ? "rotate(0deg)"
-          : "rotate(180deg)";
+      if (isOpen) {
+        closeAll();
+        history.replaceState(null, "", "/patenti");
+      } else {
+        openItem(id, true);
+        history.replaceState(null, "", `/patenti#${id}`);
       }
     });
   });
 
-  document.querySelectorAll("[data-content]").forEach((el, i) => {
-    if (!el.classList.contains("hidden")) {
-      const icon = document.querySelector(`[data-icon="${i}"]`);
-      if (icon) icon.style.transform = "rotate(180deg)";
-    }
+  window.addEventListener("load", () => {
+    syncFromHash(true);
+  });
+
+  window.addEventListener("hashchange", () => {
+    syncFromHash(true);
   });
 </script>

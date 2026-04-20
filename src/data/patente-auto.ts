@@ -42,8 +42,8 @@ export const patenteAutoData = {
     body:
       "Iniziare è semplice. Puoi venire a trovarci in una delle nostre sedi per conoscere i docenti e vedere come lavoriamo, oppure scriverci per avere dettagli sui calendari dei corsi e sulle prossime sessioni di visite mediche.",
     locations: [
-      "Sede di Favaro Veneto: [Inserire Contatto]",
-      "Sede di Salzano: [Inserire Contatto]",
+      "Sede di Favaro Veneto: Via M.te Cervino, 23/a, 30173 Favaro Veneto (VE) | Tel. 041 630163 | autoscuolaracing2@libero.it",
+      "Sede di Salzano: Via A. De Gasperi, 84, 30030 Salzano (VE) | Tel. 041 5746510 | autoscuolaracing3@gmail.com",
     ],
     ctas: [
       {
