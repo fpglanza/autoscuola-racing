@@ -1,36 +1,116 @@
 ---
-import { site } from "../../data/site";
+import logoColor from "../../assets/logo/logo-r-color.png";
+import { navigation } from "../../data/navigation";
 ---
 
-<footer class="section section-light border-t border-black/10">
-  <div class="container grid gap-10 md:grid-cols-3">
-    <div>
-      <h2 class="text-lg font-bold">{site.name}</h2>
-      <p class="mt-3 text-sm leading-6 text-black/70">
-        Autoscuola e scuola nautica con sedi a Favaro Veneto e Salzano.
+<footer class="bg-[var(--color-secondary)] text-white">
+  <div class="container py-12">
+
+    <!-- TOP -->
+    <div class="grid gap-10 md:grid-cols-3 items-start">
+
+      <!-- LOGO + INFO -->
+      <div class="space-y-4">
+        <img
+          src={logoColor.src}
+          alt="Autoscuola Racing"
+          class="h-10 w-auto"
+        />
+
+        <p class="text-sm text-white/70">
+          Autoscuola Racing
+          <br />
+          Mestre & Favaro Veneto
+        </p>
+      </div>
+
+      <!-- NAV -->
+      <div class="flex flex-col gap-3">
+        <p class="text-xs uppercase tracking-[0.12em] text-white/50">
+          Navigazione
+        </p>
+
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-semibold transition hover:text-[var(--color-primary)]"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CONTATTI -->
+      <div class="flex flex-col gap-6">
+        <p class="text-xs uppercase tracking-[0.12em] text-white/50">
+          Contatti
+        </p>
+
+        <!-- FAVARO -->
+        <div class="space-y-1">
+          <p class="text-sm font-semibold text-white">
+            Sede di Favaro Veneto
+          </p>
+
+          <p class="text-sm text-white/70">
+            Via M.te Cervino, 23/a<br />
+            30173 Favaro Veneto (VE)
+          </p>
+
+          <a
+            href="tel:+39041630163"
+            class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+          >
+            +39 041 630163
+          </a>
+        </div>
+
+        <!-- SALZANO -->
+        <div class="space-y-1">
+          <p class="text-sm font-semibold text-white">
+            Sede di Salzano
+          </p>
+
+          <p class="text-sm text-white/70">
+            Via A. De Gasperi, 84<br />
+            30030 Salzano (VE)
+          </p>
+
+          <a
+            href="tel:+390415746510"
+            class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+          >
+            +39 041 5746510
+          </a>
+        </div>
+
+        <!-- LINK CONTATTI -->
+        <a
+          href="/contatti"
+          class="pt-2 text-sm font-semibold transition hover:text-[var(--color-primary)]"
+        >
+          Vai alla pagina contatti
+        </a>
+      </div>
+    </div>
+    <!-- DIVIDER -->
+    <div class="my-10 h-px bg-white/10"></div>
+
+    <!-- BOTTOM -->
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p class="text-xs text-white/60">
+        © 2026 Autoscuola Racing. Tutti i diritti riservati.
       </p>
+
+      <div class="flex gap-6 text-xs">
+        <a href="#" class="hover:text-[var(--color-primary)]">
+          Privacy Policy
+        </a>
+        <a href="#" class="hover:text-[var(--color-primary)]">
+          Cookie Policy
+        </a>
+      </div>
     </div>
 
-    <div>
-      <h3 class="text-sm font-bold uppercase tracking-wide">Sede Favaro Veneto</h3>
-      <p class="mt-3 text-sm leading-6 text-black/70">
-        {site.addressFavaro}<br />
-        Tel. {site.phoneFavaro}<br />
-        {site.emailFavaro}
-      </p>
-    </div>
-
-    <div>
-      <h3 class="text-sm font-bold uppercase tracking-wide">Sede Salzano</h3>
-      <p class="mt-3 text-sm leading-6 text-black/70">
-        {site.addressSalzano}<br />
-        Tel. {site.phoneSalzano}<br />
-        {site.emailSalzano}
-      </p>
-    </div>
-  </div>
-
-  <div class="container mt-10 border-t border-black/10 pt-6 text-sm text-black/60">
-    <p>{site.legalName} · P.IVA 03367550278</p>
   </div>
 </footer>
