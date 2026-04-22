@@ -6,6 +6,15 @@ import PageHero from "../components/ui/PageHero.astro";
 
 const page = await getPageContent("chi-siamo");
 const { title, description } = page.data;
+
+const structureSteps = chiSiamoData.structure.items.map((item, index) => {
+  const [rawTitle, ...rest] = item.split(":");
+  return {
+    number: String(index + 1).padStart(2, "0"),
+    title: rawTitle?.trim() ?? "",
+    body: rest.join(":").trim(),
+  };
+});
 ---
 
 <BaseLayout title={title} description={description}>
@@ -33,38 +42,149 @@ const { title, description } = page.data;
   </section>
 
   <!-- STRUTTURA DEL PERCORSO -->
-  <section class="section section-light">
-    <div class="container max-w-4xl">
-      <h2 class="text-3xl font-bold">
-        {chiSiamoData.structure.title}
-      </h2>
+    <!-- STRUTTURA DEL PERCORSO -->
+  <section class="section section-light overflow-hidden">
+    <div class="container max-w-6xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="font-montserrat text-sm font-semibold uppercase tracking-[0.18em] text-[#2124BD]">
+          Il nostro processo
+        </p>
 
-      <div class="mt-8 grid gap-4">
-        {chiSiamoData.structure.items.map((item) => (
-          <div class="rounded-2xl border border-black/10 p-4 text-base text-black/70">
-            {item}
-          </div>
-        ))}
+        <h2 class="mt-4 font-['Exo_2'] text-4xl font-bold italic text-[#12135D] md:text-5xl">
+          {chiSiamoData.structure.title}
+        </h2>
+      </div>
+
+      <div class="relative mt-14">
+        <div class="absolute left-0 right-0 top-[28px] hidden border-t border-dashed border-[#12135D]/15 md:block"></div>
+
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-10">
+          {structureSteps.map((step, index) => (
+            <article class="relative text-center">
+              <div class="relative z-[1] mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#12135D]/10 bg-white shadow-sm">
+                <span class="font-montserrat text-xs font-bold tracking-[0.18em] text-[#12135D]/45">
+                  {step.number}
+                </span>
+              </div>
+
+              <div
+                class:list={[
+                  "mx-auto mt-5 flex h-20 w-20 items-center justify-center rounded-[22px] shadow-[0_20px_50px_rgba(18,19,93,0.12)]",
+                  index === 0 && "bg-[#D4FF00] text-[#12135D]",
+                  index === 1 && "bg-[#12135D] text-white",
+                  index === 2 && "bg-[#D4FF00] text-[#12135D]",
+                  index === 3 && "bg-[#12135D] text-white",
+                ]}
+              >
+                {index === 0 && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                  </svg>
+                )}
+
+                {index === 1 && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 3h6l5 5v13H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path>
+                    <path d="M14 3v5h5"></path>
+                    <path d="M10 13h4"></path>
+                    <path d="M10 17h4"></path>
+                  </svg>
+                )}
+
+                {index === 2 && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 16l5-5 4 4 7-7"></path>
+                    <path d="M14 8h6v6"></path>
+                  </svg>
+                )}
+
+                {index === 3 && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="M22 4 12 14.01l-3-3"></path>
+                  </svg>
+                )}
+              </div>
+
+              <h3 class="mt-6 font-['Exo_2'] text-xl font-bold italic text-[#12135D]">
+                {step.title}
+              </h3>
+
+              <p class="mx-auto mt-3 max-w-[18rem] font-montserrat text-sm leading-7 text-[#2C3E50]/80 md:text-[15px]">
+                {step.body}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- APP -->
-  <section class="section">
-    <div class="container max-w-4xl">
-      <h2 class="text-3xl font-bold">
-        {chiSiamoData.app.title}
-      </h2>
+    <!-- APP -->
+  <section class="section overflow-hidden">
+    <div class="container max-w-5xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold">
+          {chiSiamoData.app.title}
+        </h2>
 
-      <p class="mt-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
-        {chiSiamoData.app.body}
-      </p>
+        <p class="mt-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+          {chiSiamoData.app.body}
+        </p>
+      </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
-        {chiSiamoData.app.items.map((item) => (
-          <div class="rounded-2xl border border-black/10 p-4 text-sm text-black/70">
-            {item}
-          </div>
+      <div class="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {chiSiamoData.app.items.map((item, index) => (
+          <article class="group flex h-full flex-col rounded-[28px] border border-[#12135D]/10 bg-white p-6 shadow-[0_18px_45px_rgba(18,19,93,0.08)] transition-transform duration-300 hover:-translate-y-1">
+            <div
+              class:list={[
+                "mb-5 h-1.5 w-14 rounded-full transition-all duration-300 group-hover:w-24",
+                index % 2 === 0 ? "bg-[#D4FF00]" : "bg-[#12135D]",
+              ]}
+            ></div>
+
+            <p class="text-sm leading-7 text-black/70 md:text-[15px]">
+              {item}
+            </p>
+          </article>
         ))}
       </div>
     </div>
