@@ -1,7 +1,7 @@
 export const homeData = {
   hero: {
-    label: "ghesboro beo sto sito",
-    heading: "Autoscuola Racing: la tua autonomia, accompagnata.",
+    label: "Autoscuola Racing",
+    heading: "La tua autonomia, accompagnata",
     intro: [
       "Scegliere la nostra autoscuola significa vivere un rito di passaggio consapevole. In Autoscuola Racing trasformiamo la patente in una conquista reale: un percorso di crescita che ti rende un conducente pronto, sicuro e padrone della strada.",
       "A Favaro Veneto e Salzano, ti guidiamo passo dopo passo. Finché non sei davvero pronto per muoverti da solo.",

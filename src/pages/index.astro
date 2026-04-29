@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { homeData } from "../data/home";
+import heroBg from "../assets/logo/Hero Banner Home R.jpg";
+import heroLogo from "../assets/logo/6x/Asset 13.png";
 
 const page = await getPageContent("home");
 const { title, description } = page.data;
@@ -9,45 +11,43 @@ const { title, description } = page.data;
 
 <BaseLayout title={title} description={description}>
   <!-- HERO -->
-  <section class="section pt-10 md:pt-16">
-    <div class="container max-w-4xl text-center">
-      <p class="mb-4 text-xs uppercase tracking-[0.25em] text-[var(--color-secondary)]/50">
-        {homeData.hero.label}
-      </p>
+   <section class="relative h-screen w-full overflow-hidden">
+      <img
+        src={heroBg.src}
+        alt="Autoscuola Racing"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
 
-      <h1 class="text-[34px] leading-[1.05] text-[var(--color-secondary)] md:text-[52px] xl:text-[64px]">
-        <span class="relative inline-block font-extrabold italic uppercase">
-          {homeData.hero.heading}
-        </span>
-      </h1>
-
-      <div class="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-7 text-[var(--color-text)]/80 md:text-lg md:leading-8">
-        {homeData.hero.intro.map((paragraph) => <p>{paragraph}</p>)}
-      </div>
-
-      <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-        <a href="/patente-auto" class="btn-secondary">
-          Scopri di più
-        </a>
-
-        <a href={homeData.hero.cta.href} class="btn-racing-primary">
-          {homeData.hero.cta.label}
-        </a>
-      </div>
-    </div>
-
-    <div class="container mt-14">
-      <div class="relative overflow-hidden rounded-2xl">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(212,255,0,0.25),transparent_60%)]"></div>
-
-        <div class="relative flex min-h-[220px] items-center justify-center bg-gradient-to-br from-[rgba(212,255,0,0.12)] to-[rgba(33,36,189,0.04)] md:min-h-[320px]">
-          <p class="text-sm uppercase tracking-wide text-[var(--color-secondary)]/40">
-            Immagine guida / auto (placeholder)
-          </p>
+      <div class="relative z-10 flex h-full items-center justify-center text-center">
+        <div class="container">
+          <div class="mx-auto flex max-w-4xl flex-col items-center pt-24 pb-10">
+            <p class="mb-2 max-w-[900px] text-center text-[10px] font-bold uppercase leading-none tracking-[0.18em] text-white md:text-xs">
+              {homeData.hero.label}
+            </p>
+            <h1
+              class="heading-hero text-[clamp(2.5rem,6vw,6rem)]"
+            >
+              {homeData.hero.heading}
+            </h1>
+            <div class="mt-5 max-w-2xl space-y-3 text-sm leading-6 text-white md:text-base md:leading-7">
+              {homeData.hero.intro.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+            <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <a href={homeData.hero.cta.href} class="btn-racing-lime">
+                {homeData.hero.cta.label}
+              </a>
+              <a
+                href="/patente-auto"
+                class="btn-racing-ghost-lime"
+              >
+                scopri patente auto
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- AUTOSCUOLA A FAVARO E SALZANO -->
   <section class="section">

@@ -28,6 +28,11 @@
 /* =====================
    BASE
 ===================== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -55,6 +60,18 @@ h1 {
 
   /* migliora rendering */
   display: block;
+}
+
+.heading-hero {
+  color: var(--color-primary); /* LIME */
+  text-shadow:
+    -6px 0px 0 var(--color-secondary); /* BLU offset */
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 0.95; /* più compatto per evitare tagli */
 }
 
 h2, h3 {
@@ -147,6 +164,66 @@ img {
 .btn-secondary:hover {
   background: var(--color-secondary);
   color: var(--color-primary); /* 👈 LIME */
+}
+
+.btn-racing-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-style: italic;
+  background-color: var(--color-primary); /* LIME */
+  color: var(--color-secondary); /* BLU */
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+/* HOVER = effetto accelerazione */
+.btn-racing-lime:hover {
+    transform: translateX(6px); /* 👉 movimento laterale */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary); /* LIME */
+}
+
+/* ACTIVE (click) = micro feedback */
+.btn-racing-lime:active {
+    transform: translateX(2px) scale(0.98);
+}
+
+.btn-racing-ghost-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+
+  border-radius: 9999px;
+
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-style: italic;
+
+  background: transparent;
+  color: var(--color-primary); /* LIME */
+
+  border: 2px solid var(--color-primary);
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER = accelerazione */
+.btn-racing-ghost-lime:hover {
+  transform: translateX(6px);
+  background: var(--color-primary);
+  color: var(--color-secondary); /* BLU */
 }
 
 /* =====================
