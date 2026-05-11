@@ -56,8 +56,8 @@ export const homeData = {
         ctaLabel: "Inizia il tuo percorso auto",
       },
       {
-        title: "Cambio Autoscuola e Seconda Possibilità",
-        text: "Se hai avuto un'esperienza negativa o sei stato bocciato altrove, accogliamo il tuo percorso senza giudizio. Analizziamo i tuoi blocchi (teorici o pratici) e costruiamo il piano di recupero per portarti al traguardo.",
+        title: "Cambio e Seconda Possibilità",
+        text: "Se hai avuto un'esperienza negativa o sei stato bocciato altrove, accogliamo il tuo percorso senza giudizio. Costruiamo il piano di recupero per portarti al traguardo.",
         href: "/contatti",
         ctaLabel: "Contattaci",
       },
