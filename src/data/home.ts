@@ -39,7 +39,7 @@ export const homeData = {
       `Il nostro metodo sostituisce la memorizzazione meccanica con la comprensione logica. Interveniamo direttamente per correggere il tuo metodo di studio, fornendoti gli strumenti per decodificare il regolamento stradale. Questo approccio è l'unico che abbatte davvero l'ansia da prestazione: quando capisci il "perché" di una norma, la risposta corretta diventa naturale, non una scommessa.`,
     ],
     cta: {
-      label: "Scopri come funziona il Metodo Racing",
+      label: "Scopri il Metodo Racing",
       href: "/chi-siamo",
     },
   },
