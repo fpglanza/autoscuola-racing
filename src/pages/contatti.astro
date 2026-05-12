@@ -2,20 +2,61 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { contattiData } from "../data/contatti";
-import PageHero from "../components/ui/PageHero.astro";
+import contattiHeroBg from "../assets/logo/Taglio di luce.jpg";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 
 const page = await getPageContent("contatti");
 const { title, description } = page.data;
 ---
 
 <BaseLayout title={title} description={description}>
-  <PageHero
-    label="Contatti"
-    heading={contattiData.hero.heading}
-    intro={contattiData.hero.intro}
-    placeholderText="Placeholder contatti / sedi"
-  />
+  <!-- HERO -->
+  <section class="relative min-h-screen w-full overflow-hidden bg-[#05091f]">
+    <img
+      src={contattiHeroBg.src}
+      alt="Contatti Autoscuola Racing"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
 
+    <!-- Overlay coerente con homepage -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#07102f]/45 to-[#05091f] mix-blend-multiply"></div>
+
+    <!-- Overlay laterale per leggibilità testo a sinistra -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#05091f]/92 via-[#07102f]/60 to-transparent"></div>
+
+    <!-- Luce decorativa -->
+    <div class="absolute -left-24 top-24 h-72 w-72 rounded-full bg-[var(--color-primary)]/15 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-20 h-72 w-72 rounded-full bg-[var(--color-primary)]/10 blur-3xl"></div>
+
+    <div class="relative z-10 flex min-h-screen items-center">
+      <div class="container">
+        <div class="max-w-3xl pt-28 pb-16 text-left">
+          <p class="mb-3 text-[10px] font-bold uppercase leading-none tracking-[0.18em] text-white/80 md:text-xs">
+            Contatti
+          </p>
+
+          <h1 class="heading-hero text-left text-[clamp(2.7rem,6vw,6rem)]">
+            {contattiData.hero.heading}
+          </h1>
+
+          <div class="mt-6 max-w-2xl text-left text-sm leading-6 text-white/85 md:text-base md:leading-7">
+            <p>{contattiData.hero.intro}</p>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sedi" class="btn-racing-lime">
+              scegli la sede
+            </a>
+
+            <a href="#visite-mediche" class="btn-racing-ghost-lime">
+              visite mediche
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs />
   <!-- SEDI -->
   <section class="section section-light overflow-hidden">
     <div class="container max-w-6xl">

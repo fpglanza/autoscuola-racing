@@ -1,6 +1,6 @@
 export const patenteAutoData = {
   hero: {
-    heading: "Patente B a Mestre e Favaro: guida la tua indipendenza.",
+    heading: "Guida la tua indipendenza.",
     intro:
       "Ottenere la patente è il primo passo verso una nuova libertà, ma la vera meta è sentirsi pronti a muoversi nel traffico in totale autonomia. In Autoscuola Racing trasformiamo lo studio per l’esame in una conquista reale, accompagnandoti dai primi quiz fino alla sicurezza al volante.",
     cta: {

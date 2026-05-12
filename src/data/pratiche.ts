@@ -1,7 +1,7 @@
 export const praticheData = {
   hero: {
     heading:
-      "Gestione pratiche patente a Favaro Veneto e Salzano.",
+      "Gestione pratiche patente.",
     intro:
       "La burocrazia non deve essere un ostacolo. In Autoscuola Racing trovi un team pronto a risolvere ogni pratica con efficienza e cortesia. Ci occupiamo di tutto noi, così tu puoi risparmiare tempo e stress, con la sicurezza di un supporto professionale e diretto.",
     cta: {

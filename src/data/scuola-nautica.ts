@@ -1,7 +1,7 @@
 export const scuolaNauticaData = {
   hero: {
     label: "Scuola Nautica",
-    heading: "Patente Nautica a Mestre e Salzano: prendi il comando.",
+    heading: "Patente Nautica: prendi il comando.",
     intro:
       "Vivere il mare o la laguna richiede competenza, rispetto delle regole e una preparazione tecnica rigorosa. In Autoscuola Racing trasformiamo il percorso per la Patente Nautica in un’esperienza di apprendimento solida, guidandoti attraverso teoria e pratica finché non sarai pronto a navigare in totale sicurezza.",
     primaryCta: {
