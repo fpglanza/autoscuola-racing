@@ -62,6 +62,40 @@ h1 {
   display: block;
 }
 
+.hero-overlay-main {
+
+  background: linear-gradient(
+
+    to bottom,
+
+    transparent,
+
+    rgba(7, 16, 47, 0.15),
+
+    rgba(5, 9, 31, 0.55)
+
+  );
+
+  mix-blend-mode: multiply;
+
+}
+
+.hero-overlay-side {
+
+  background: linear-gradient(
+
+    to right,
+
+    rgba(5, 9, 31, 0.55),
+
+    rgba(7, 16, 47, 0.20),
+
+    transparent
+
+  );
+
+}
+
 .heading-hero {
   color: var(--color-primary); /* LIME */
   text-shadow:
