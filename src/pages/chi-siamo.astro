@@ -6,6 +6,12 @@ import chiSiamoHeroBg from "../assets/logo/Team 5.jpg";
 import smartphoneImg from "../assets/logo/Smartphone 3D.png";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 
+import team01 from "../assets/Team/team01.jpg";
+import team02 from "../assets/Team/team02.jpg";
+import team03 from "../assets/Team/team03.jpg";
+import team04 from "../assets/Team/team04.jpg";
+import team06 from "../assets/Team/team06.jpg";
+
 const page = await getPageContent("chi-siamo");
 const { title, description } = page.data;
 
@@ -18,13 +24,33 @@ const structureSteps = chiSiamoData.structure.items.map((item, index) => {
   };
 });
 
-const teamImages = Object.values(
-  import.meta.glob("../assets/Team/*.{jpg,jpeg,png,webp}", {
-    eager: true,
-    query: "?url",
-    import: "default",
-  })
-) as string[];
+const teamMembers = [
+  {
+    image: team02.src,
+    name: "Cristiano Bellato",
+    role: "Founder, Istruttore",
+  },
+  {
+    image: team04.src,
+    name: "Fiorella Meneghel",
+    role: "Founder, Front Office",
+  },
+  {
+    image: team01.src,
+    name: "Alessandro Cominato",
+    role: "Istruttore",
+  },
+  {
+    image: team03.src,
+    name: "Elisa Pinton",
+    role: "Front Office",
+  },
+  {
+    image: team06.src,
+    name: "Ragnar Borghi",
+    role: "Istruttore",
+  },
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -36,10 +62,7 @@ const teamImages = Object.values(
       class="absolute inset-0 h-full w-full object-cover"
     />
 
-    <!-- Overlay coerente con homepage -->
     <div class="absolute inset-0 hero-overlay-main"></div>
-
-    <!-- Overlay laterale per leggibilità testo a sinistra -->
     <div class="absolute inset-0 hero-overlay-side"></div>
 
     <div class="relative z-10 flex min-h-screen items-center">
@@ -70,17 +93,18 @@ const teamImages = Object.values(
       </div>
     </div>
   </section>
+
   <Breadcrumbs />
 
-    <!-- STRUTTURA DEL PERCORSO -->
+  <!-- STRUTTURA DEL PERCORSO -->
   <section class="section section-light overflow-hidden">
     <div class="container max-w-6xl">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="font-montserrat uppercase text-sm font-semibold uppercase tracking-[0.18em] text-[#2124BD]">
+        <p class="font-montserrat text-sm font-semibold uppercase tracking-[0.18em] text-[#2124BD]">
           Il nostro processo
         </p>
 
-        <h2 class="mt-4 uppercase font-['Exo_2'] text-4xl font-bold italic text-[#12135D] md:text-5xl">
+        <h2 class="mt-4 font-['Exo_2'] text-4xl font-bold italic uppercase text-[#12135D] md:text-5xl">
           {chiSiamoData.structure.title}
         </h2>
       </div>
@@ -190,10 +214,11 @@ const teamImages = Object.values(
   <!-- COME SI PRENDE DAVVERO LA PATENTE -->
   <section id="metodo" class="section scroll-mt-[140px]">
     <div class="container max-w-3xl">
-      <h2 class="text-3xl uppercase font-bold">
+      <h2 class="text-3xl font-bold uppercase">
         {chiSiamoData.journey.title}
       </h2>
-      <div class="mt-6 space-y-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+
+      <div class="mt-6 space-y-4 text-base leading-7 text-black/70 md:text-lg md:leading-8">
         {chiSiamoData.journey.body.split("\n").map((p) => (
           <p>{p}</p>
         ))}
@@ -207,8 +232,6 @@ const teamImages = Object.values(
     <div class="absolute -right-24 bottom-20 h-72 w-72 rounded-full bg-[var(--color-secondary)]/10 blur-3xl"></div>
 
     <div class="container relative z-10 max-w-6xl">
-
-      <!-- IMMAGINE -->
       <div class="mx-auto flex max-w-[520px] justify-center">
         <img
           src={smartphoneImg.src}
@@ -217,7 +240,6 @@ const teamImages = Object.values(
         />
       </div>
 
-      <!-- TITOLO -->
       <div class="mx-auto mt-10 max-w-3xl text-center">
         <p class="mb-4 text-xs uppercase tracking-[0.25em] text-[var(--color-secondary)]/45">
           app dedicata
@@ -232,7 +254,6 @@ const teamImages = Object.values(
         </p>
       </div>
 
-      <!-- CARD -->
       <div class="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
         {chiSiamoData.app.items.map((item, index) => (
           <article class="group relative overflow-hidden rounded-[30px] border border-[#12135D]/10 bg-white p-7 shadow-[0_18px_45px_rgba(18,19,93,0.08)] transition-all duration-300 hover:-translate-y-1">
@@ -253,7 +274,6 @@ const teamImages = Object.values(
           </article>
         ))}
       </div>
-
     </div>
   </section>
 
@@ -278,28 +298,28 @@ const teamImages = Object.values(
         </p>
       </div>
 
-      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {teamImages.map((image, index) => (
-          <article class="group relative overflow-hidden rounded-[32px] bg-[var(--color-secondary)] shadow-[0_22px_55px_rgba(18,19,93,0.14)]">
+      <div class="mt-14 flex flex-wrap justify-center gap-6">
+        {teamMembers.map((member) => (
+          <article class="group relative w-full overflow-hidden rounded-[32px] bg-[var(--color-secondary)] shadow-[0_22px_55px_rgba(18,19,93,0.14)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="aspect-[4/5] overflow-hidden">
               <img
-                src={image}
-                alt={`Team Autoscuola Racing ${index + 1}`}
+                src={member.image}
+                alt={`${member.name} - ${member.role}`}
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05091f]/80 via-[#05091f]/10 to-transparent opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#05091f]/82 via-[#05091f]/12 to-transparent opacity-90"></div>
 
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="h-1.5 w-14 rounded-full bg-[var(--color-primary)] transition-all duration-300 group-hover:w-24"></div>
 
               <p class="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
-                Autoscuola Racing
+                {member.role}
               </p>
 
               <p class="mt-2 text-xl font-bold uppercase leading-tight text-white">
-                Team {String(index + 1).padStart(2, "0")}
+                {member.name}
               </p>
             </div>
           </article>
@@ -311,11 +331,11 @@ const teamImages = Object.values(
   <!-- SUPPORTO -->
   <section class="section section-light">
     <div class="container max-w-3xl">
-      <h2 class="text-3xl uppercase font-bold">
+      <h2 class="text-3xl font-bold uppercase">
         {chiSiamoData.support.title}
       </h2>
 
-      <div class="mt-6 space-y-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+      <div class="mt-6 space-y-4 text-base leading-7 text-black/70 md:text-lg md:leading-8">
         {chiSiamoData.support.body.split("\n").map((p) => (
           <p>{p}</p>
         ))}
@@ -326,11 +346,11 @@ const teamImages = Object.values(
   <!-- PRONTO -->
   <section class="section">
     <div class="container max-w-3xl">
-      <h2 class="text-3xl uppercase font-bold">
+      <h2 class="text-3xl font-bold uppercase">
         {chiSiamoData.readiness.title}
       </h2>
 
-      <div class="mt-6 space-y-4 text-base md:text-lg leading-7 md:leading-8 text-black/70">
+      <div class="mt-6 space-y-4 text-base leading-7 text-black/70 md:text-lg md:leading-8">
         {chiSiamoData.readiness.body.split("\n").map((p) => (
           <p>{p}</p>
         ))}
