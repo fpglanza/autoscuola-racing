@@ -44,7 +44,10 @@ const gaMeasurementId = "G-XXXXXXXXXX";
 </div>
 
 <script>
-  const COOKIE_CONSENT_KEY = "racing_cookie_consento";
+  const COOKIE_CONSENT_KEY = "racing_cookie_consent_v1";
+  const COOKIE_CONSENT_TIME_KEY = "racing_cookie_consent_time_v1";
+  const CONSENT_DURATION_MS = 10 * 60 * 1000; // 10 min
+
   const gaMeasurementId = "G-XXXXXXXXXX";
 
   const banner = document.getElementById("cookie-banner");
@@ -82,25 +85,41 @@ const gaMeasurementId = "G-XXXXXXXXXX";
     banner?.classList.remove("hidden");
   }
 
-  const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+  function saveConsent(value) {
+    localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    localStorage.setItem(COOKIE_CONSENT_TIME_KEY, String(Date.now()));
+  }
 
-  if (savedConsent === "accepted") {
+  function isConsentStillValid() {
+    const savedTime = Number(localStorage.getItem(COOKIE_CONSENT_TIME_KEY));
+
+    if (!savedTime) return false;
+
+    return Date.now() - savedTime < CONSENT_DURATION_MS;
+  }
+
+  const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+  const consentIsValid = isConsentStillValid();
+
+  if (savedConsent === "accepted" && consentIsValid) {
     hideBanner();
     loadGoogleAnalytics();
-  } else if (savedConsent === "rejected") {
+  } else if (savedConsent === "rejected" && consentIsValid) {
     hideBanner();
   } else {
+    localStorage.removeItem(COOKIE_CONSENT_KEY);
+    localStorage.removeItem(COOKIE_CONSENT_TIME_KEY);
     showBanner();
   }
 
   acceptButton?.addEventListener("click", () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    saveConsent("accepted");
     loadGoogleAnalytics();
     hideBanner();
   });
 
   rejectButton?.addEventListener("click", () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "rejected");
+    saveConsent("rejected");
     hideBanner();
   });
 </script>
