@@ -1,3 +1,5 @@
+import { whatsappLink } from "../lib/whatsapp";
+
 export const homeData = {
   hero: {
     label: "Autoscuola Racing",
@@ -100,7 +102,10 @@ export const homeData = {
     ctas: [
       {
         label: "Scrivici su WhatsApp per info rapide",
-        href: "/contatti",
+        href: whatsappLink(
+          "393494157836",
+          "Ciao Autoscuola Racing, vorrei ricevere informazioni."
+        ),
         variant: "secondary",
       },
       {

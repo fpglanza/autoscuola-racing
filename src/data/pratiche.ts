@@ -1,3 +1,5 @@
+import { whatsappLink } from "../lib/whatsapp";
+
 export const praticheData = {
   hero: {
     heading:
@@ -53,7 +55,10 @@ export const praticheData = {
     ctas: [
       {
         label: "Chiedi la data della visita su WhatsApp",
-        href: "#",
+        href: whatsappLink(
+          "393494157836",
+          "Ciao Autoscuola Racing, vorrei sapere la prossima data disponibile per la visita medica in sede."
+        ),
       },
       {
         label: "Chiamaci per info sulle pratiche",

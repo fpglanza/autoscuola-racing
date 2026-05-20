@@ -1,3 +1,5 @@
+import { whatsappLink } from "../lib/whatsapp";
+
 export const patenteAutoData = {
   hero: {
     heading: "Guida la tua indipendenza.",
@@ -48,7 +50,10 @@ export const patenteAutoData = {
     ctas: [
       {
         label: "Chiedi informazioni su WhatsApp",
-        href: "#",
+        href: whatsappLink(
+          "393494157836",
+          "Ciao Autoscuola Racing, vorrei informazioni sulla Patente B."
+        ),
       },
       {
         label: "Vieni a trovarci in sede",

@@ -9,19 +9,46 @@ import { navigation } from "../../data/navigation";
     <!-- TOP -->
     <div class="grid gap-10 md:grid-cols-3 items-start">
 
-      <!-- LOGO + INFO -->
-      <div class="space-y-4">
-          <img
-            src={logoColor.src}
-            alt="Autoscuola Racing"
-            class="h-12 w-auto object-contain"
-          />
-        <p class="text-sm text-white/70">
-          Autoscuola Racing
+    <!-- LOGO + INFO -->
+    <div class="space-y-5">
+      <img
+        src={logoColor.src}
+        alt="Autoscuola Racing"
+        class="h-12 w-auto object-contain"
+      />
+
+      <p class="text-sm text-white/70">
+        Autoscuola Racing
+        <br />
+        Mestre & Favaro Veneto
+      </p>
+
+      <div class="space-y-2 border-t border-white/10 pt-5 text-xs leading-6 text-white/55">
+        <p class="font-semibold text-white/70">
+          Ciemme Srl
+        </p>
+
+        <p>
+          P.IVA/C.F. 03367550278
           <br />
-          Mestre & Favaro Veneto
+          Cod. SDI M5UXCR1
+        </p>
+
+        <p>
+          <span class="font-semibold text-white/65">Sede legale</span>
+          <br />
+          Via Monte Cervino 23/a
+        </p>
+
+        <p>
+          <span class="font-semibold text-white/65">Legale rappresentante</span>
+          <br />
+          Bellato Cristiano
         </p>
       </div>
+    </div>
+
+      
 
       <!-- NAV -->
       <div class="flex flex-col gap-3">
@@ -102,14 +129,237 @@ import { navigation } from "../../data/navigation";
       </p>
 
       <div class="flex gap-6 text-xs">
-        <a href="#" class="hover:text-[var(--color-primary)]">
+        <button
+          type="button"
+          class="hover:text-[var(--color-primary)]"
+          data-policy-open="privacy"
+        >
           Privacy Policy
-        </a>
-        <a href="#" class="hover:text-[var(--color-primary)]">
+        </button>
+
+        <button
+          type="button"
+          class="hover:text-[var(--color-primary)]"
+          data-policy-open="cookie"
+        >
           Cookie Policy
-        </a>
+        </button>
       </div>
     </div>
 
   </div>
+  <!-- POLICY MODALS -->
+<div
+  class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/65 px-4 py-8 backdrop-blur-sm"
+  data-policy-modal="privacy"
+  aria-hidden="true"
+>
+  <div class="relative max-h-[82vh] w-full max-w-3xl overflow-hidden rounded-[28px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
+    <div class="flex items-start justify-between gap-6 border-b border-black/10 px-6 py-5 md:px-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]/45">
+          Autoscuola Racing
+        </p>
+        <h2 class="mt-2 text-2xl font-bold uppercase text-[var(--color-secondary)] md:text-3xl">
+          Privacy Policy
+        </h2>
+      </div>
+
+      <button
+        type="button"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F8F9FF] text-[var(--color-secondary)] transition hover:bg-[var(--color-primary)]"
+        data-policy-close
+        aria-label="Chiudi Privacy Policy"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="max-h-[62vh] overflow-y-auto px-6 py-6 text-sm leading-7 text-[var(--color-text)]/80 md:px-8">
+      <p class="mb-6 text-xs text-[var(--color-text)]/55">
+        Ultimo aggiornamento: [inserire data]
+      </p>
+
+      <h3 class="text-lg font-bold text-[var(--color-secondary)]">Titolare del trattamento</h3>
+      <p class="mt-2">
+        Il Titolare del trattamento è <strong>Ciemme Srl</strong>, P.IVA/C.F. 03367550278,
+        con sede legale in Via Monte Cervino 23/a. Cod. SDI M5UXCR1.
+        Legale rappresentante: Bellato Cristiano.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Dati trattati</h3>
+      <p class="mt-2">
+        Il sito può trattare dati di navigazione e dati forniti volontariamente dall’utente
+        tramite email, telefono, WhatsApp o altri canali di contatto, come nome, cognome,
+        numero di telefono, indirizzo email e contenuto della richiesta.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Finalità del trattamento</h3>
+      <p class="mt-2">
+        I dati sono trattati per rispondere alle richieste dell’utente, fornire informazioni
+        su corsi, patenti, pratiche, rinnovi, visite mediche e servizi offerti, gestire eventuali
+        appuntamenti, adempiere a obblighi di legge e garantire sicurezza e corretto funzionamento del sito.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Base giuridica</h3>
+      <p class="mt-2">
+        Il trattamento si basa sull’esecuzione di misure precontrattuali o contrattuali,
+        sull’adempimento di obblighi di legge, sul legittimo interesse del Titolare e,
+        ove richiesto, sul consenso dell’utente.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Modalità e conservazione</h3>
+      <p class="mt-2">
+        I dati sono trattati con strumenti informatici, telematici e, se necessario, cartacei,
+        adottando misure adeguate di sicurezza. I dati sono conservati per il tempo necessario
+        alla gestione della richiesta e per i termini previsti dalla normativa applicabile.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Comunicazione dei dati</h3>
+      <p class="mt-2">
+        I dati possono essere comunicati a fornitori tecnici, consulenti, soggetti pubblici
+        o autorità competenti quando necessario o previsto dalla legge. I dati non saranno diffusi.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Diritti dell’utente</h3>
+      <p class="mt-2">
+        L’utente può esercitare i diritti di accesso, rettifica, cancellazione, limitazione,
+        opposizione, portabilità e revoca del consenso, ove applicabile, contattando il Titolare
+        tramite i recapiti indicati nella pagina Contatti.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Reclamo</h3>
+      <p class="mt-2">
+        L’utente ha diritto di proporre reclamo al Garante per la protezione dei dati personali.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/65 px-4 py-8 backdrop-blur-sm"
+  data-policy-modal="cookie"
+  aria-hidden="true"
+>
+  <div class="relative max-h-[82vh] w-full max-w-3xl overflow-hidden rounded-[28px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
+    <div class="flex items-start justify-between gap-6 border-b border-black/10 px-6 py-5 md:px-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]/45">
+          Autoscuola Racing
+        </p>
+        <h2 class="mt-2 text-2xl font-bold uppercase text-[var(--color-secondary)] md:text-3xl">
+          Cookie Policy
+        </h2>
+      </div>
+
+      <button
+        type="button"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F8F9FF] text-[var(--color-secondary)] transition hover:bg-[var(--color-primary)]"
+        data-policy-close
+        aria-label="Chiudi Cookie Policy"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="max-h-[62vh] overflow-y-auto px-6 py-6 text-sm leading-7 text-[var(--color-text)]/80 md:px-8">
+      <p class="mb-6 text-xs text-[var(--color-text)]/55">
+        Ultimo aggiornamento: [inserire data]
+      </p>
+
+      <h3 class="text-lg font-bold text-[var(--color-secondary)]">Cosa sono i cookie</h3>
+      <p class="mt-2">
+        I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell’utente
+        per consentire il corretto funzionamento delle pagine e migliorare l’esperienza di navigazione.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Cookie tecnici</h3>
+      <p class="mt-2">
+        Il sito può utilizzare cookie tecnici necessari al funzionamento delle pagine,
+        alla sicurezza e alla corretta erogazione dei servizi richiesti dall’utente.
+        Questi cookie non richiedono il consenso dell’utente.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Cookie analitici</h3>
+      <p class="mt-2">
+        Il sito potrebbe utilizzare strumenti statistici per comprendere in forma aggregata
+        come gli utenti navigano le pagine. Se tali strumenti comportano identificazione
+        dell’utente o tracciamento non tecnico, saranno attivati solo previo consenso.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Cookie di terze parti</h3>
+      <p class="mt-2">
+        Il sito può includere collegamenti o servizi di terze parti, come Google Maps,
+        WhatsApp o altri servizi esterni. Tali soggetti possono trattare dati secondo
+        le proprie informative privacy e cookie policy.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Gestione dei cookie</h3>
+      <p class="mt-2">
+        L’utente può gestire o disabilitare i cookie attraverso le impostazioni del proprio browser.
+        La disattivazione dei cookie tecnici può compromettere il corretto funzionamento del sito.
+      </p>
+
+      <h3 class="mt-6 text-lg font-bold text-[var(--color-secondary)]">Modifiche</h3>
+      <p class="mt-2">
+        La presente Cookie Policy può essere aggiornata in qualsiasi momento in caso di modifiche
+        tecniche, normative o organizzative.
+      </p>
+    </div>
+  </div>
+</div>
 </footer>
+
+<script>
+  const openButtons = document.querySelectorAll("[data-policy-open]");
+  const closeButtons = document.querySelectorAll("[data-policy-close]");
+  const modals = document.querySelectorAll("[data-policy-modal]");
+
+  function openPolicyModal(type) {
+    const modal = document.querySelector(`[data-policy-modal="${type}"]`);
+
+    if (!(modal instanceof HTMLElement)) return;
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePolicyModals() {
+    modals.forEach((modal) => {
+      if (!(modal instanceof HTMLElement)) return;
+
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
+    document.body.style.overflow = "";
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const type = button.getAttribute("data-policy-open");
+      if (type) openPolicyModal(type);
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closePolicyModals);
+  });
+
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closePolicyModals();
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePolicyModals();
+    }
+  });
+</script>

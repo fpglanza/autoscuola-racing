@@ -1,4 +1,6 @@
 ---
+import { whatsappLink } from "../../lib/whatsapp";
+
 interface Props {
   name: string;
   city: string;
@@ -16,9 +18,12 @@ const {
   address,
   phone,
   email,
-  whatsapp = "#",
+  whatsapp = whatsappLink(
+    "393494157836",
+    "Ciao Autoscuola Racing, vorrei ricevere informazioni."
+  ),
   notes,
-  mapUrl = "#",
+  mapUrl = "/contatti",
 } = Astro.props;
 ---
 

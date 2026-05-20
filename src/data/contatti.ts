@@ -1,3 +1,5 @@
+import { whatsappLink } from "../lib/whatsapp";
+
 // export const contattiData = {
 //   hero: {
 //     heading: "Contatti Autoscuola Racing",
@@ -50,13 +52,13 @@
 //         label:
 //           "Sede di Mestre – Favaro Veneto Per info su corsi e pratiche in terraferma.",
 //         cta: "Scrivici a Mestre",
-//         href: "#",
+//         href: "/contatti",
 //       },
 //       {
 //         label:
 //           "Sede di Salzano Per supporto diretto e iscrizioni a Salzano.",
 //         cta: "Scrivici a Salzano",
-//         href: "#",
+//         href: "/contatti",
 //       },
 //     ],
 //   },
@@ -75,12 +77,15 @@ export const contattiData = {
       "Ci trovi nel cuore di Favaro Veneto. Qui gestiamo lezioni teoriche, esercitazioni quiz e pratiche per patenti auto e nautiche.",
     address: "Via Monte Cervino, 23/a, 30173 Favaro Veneto (VE)",
     phone: "041 630163",
-    email: "[Inserire Email]",
-    hours: "Lunedì – Venerdì: 9 - 12 e 16-19",
+    email: "autoscuolaracing2@libero.it",
+    hours: "Lunedì – Venerdì: 9 - 12 e 16.30 - 19.15",
     actions: [
       {
         label: "Scrivici a Mestre",
-        href: "#",
+        href: whatsappLink(
+          "393494157836",
+          "Ciao Autoscuola Racing Favaro, vorrei ricevere informazioni."
+        ),
         variant: "primary",
       },
       {
@@ -97,12 +102,15 @@ export const contattiData = {
       "Per gli allievi della zona, la sede di Salzano offre la stessa attenzione e il clima familiare che contraddistingue Autoscuola Racing.",
     address: "Via A. de Gasperi, 84, 30030 Salzano (VE)",
     phone: "041 574 6510",
-    email: "[Inserire Email]",
-    hours: "Lunedì – Venerdì: 9 - 12 e 16.30 - 19",
+    email: "autoscuolaracing2@libero.it",
+    hours: "Lunedì – Venerdì: 9 - 12 e 16.30 - 19.15",
     actions: [
       {
         label: "Scrivici a Salzano",
-        href: "#",
+        href: whatsappLink(
+          "393494157836",
+          "Ciao Autoscuola Racing Salzano, vorrei ricevere informazioni."
+        ),
         variant: "primary",
       },
       {
