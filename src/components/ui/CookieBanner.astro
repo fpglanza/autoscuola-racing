@@ -1,0 +1,100 @@
+---
+const gaMeasurementId = "G-XXXXXXXXXX";
+---
+
+<div
+  id="cookie-banner"
+  class="fixed inset-x-4 bottom-4 z-[1000] hidden rounded-[28px] border border-white/10 bg-[var(--color-secondary)] p-5 text-white shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:left-auto md:max-w-xl md:p-6"
+>
+  <div class="flex flex-col gap-5">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+        Gestione cookie
+      </p>
+
+      <h2 class="mt-2 text-xl font-bold uppercase text-[var(--color-primary)]">
+        Cookie e statistiche
+      </h2>
+
+      <p class="mt-3 text-sm leading-6 text-white/75">
+        Utilizziamo cookie tecnici necessari al funzionamento del sito. Con il tuo consenso
+        possiamo usare anche Google Analytics per raccogliere statistiche anonime e migliorare
+        i contenuti del sito.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
+      <button
+        type="button"
+        id="cookie-reject"
+        class="rounded-full border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+      >
+        Rifiuta
+      </button>
+
+      <button
+        type="button"
+        id="cookie-accept"
+        class="rounded-full bg-[var(--color-primary)] px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-secondary)] transition hover:scale-[1.02]"
+      >
+        Accetta
+      </button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ gaMeasurementId }}>
+  const COOKIE_CONSENT_KEY = "racing_cookie_consent";
+
+  const banner = document.getElementById("cookie-banner");
+  const acceptButton = document.getElementById("cookie-accept");
+  const rejectButton = document.getElementById("cookie-reject");
+
+  function loadGoogleAnalytics() {
+    if (!gaMeasurementId || gaMeasurementId === "G-XXXXXXXXXX") return;
+
+    if (window.__racingGaLoaded) return;
+    window.__racingGaLoaded = true;
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", gaMeasurementId, {
+      anonymize_ip: true,
+    });
+  }
+
+  function hideBanner() {
+    banner?.classList.add("hidden");
+  }
+
+  function showBanner() {
+    banner?.classList.remove("hidden");
+  }
+
+  const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+
+  if (savedConsent === "accepted") {
+    loadGoogleAnalytics();
+  } else if (savedConsent !== "rejected") {
+    showBanner();
+  }
+
+  acceptButton?.addEventListener("click", () => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    loadGoogleAnalytics();
+    hideBanner();
+  });
+
+  rejectButton?.addEventListener("click", () => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, "rejected");
+    hideBanner();
+  });
+</script>
