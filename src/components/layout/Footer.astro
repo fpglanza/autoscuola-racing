@@ -128,7 +128,7 @@ import { navigation } from "../../data/navigation";
         © 2026 Autoscuola Racing. Tutti i diritti riservati.
       </p>
 
-      <div class="flex gap-6 text-xs">
+      <div class="flex flex-wrap gap-6 text-xs">
         <button
           type="button"
           class="hover:text-[var(--color-primary)]"
@@ -143,6 +143,14 @@ import { navigation } from "../../data/navigation";
           data-policy-open="cookie"
         >
           Cookie Policy
+        </button>
+
+        <button
+          id="manage-cookies"
+          type="button"
+          class="hover:text-[var(--color-primary)]"
+        >
+          Gestisci preferenze cookie
         </button>
       </div>
     </div>
@@ -311,6 +319,7 @@ import { navigation } from "../../data/navigation";
 </footer>
 
 <script>
+  import { resetConsent } from "../../lib/consent";
   const openButtons = document.querySelectorAll("[data-policy-open]");
   const closeButtons = document.querySelectorAll("[data-policy-close]");
   const modals = document.querySelectorAll("[data-policy-modal]");
@@ -361,5 +370,10 @@ import { navigation } from "../../data/navigation";
     if (event.key === "Escape") {
       closePolicyModals();
     }
+  });
+  
+  document.getElementById("manage-cookies")?.addEventListener("click", () => {
+    resetConsent();
+    window.location.reload();
   });
 </script>
