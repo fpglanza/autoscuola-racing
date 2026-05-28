@@ -56,11 +56,23 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={praticheData.hero.cta.href} class="btn-racing-lime">
+            <a
+              href={praticheData.hero.cta.href}
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="pratiche"
+              data-section="hero"
+            >
               {praticheData.hero.cta.label}
             </a>
 
-            <a href="#rinnovo" class="btn-racing-ghost-lime">
+            <a
+              href="#rinnovo"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="pratiche"
+              data-section="hero"
+            >
               scopri le pratiche
             </a>
           </div>
@@ -160,7 +172,13 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
       </div>
 
       <div class="mt-10 text-center">
-        <a href={praticheData.renewal.cta} class="btn-racing-primary">
+        <a
+          href={praticheData.renewal.cta}
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="pratiche"
+          data-section="renewal"
+        >
           Contattaci
         </a>
       </div>
@@ -179,7 +197,13 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
       </div>
 
       <div class="mt-8">
-        <a href={praticheData.medical.cta} class="btn-racing-primary">
+        <a
+          href={praticheData.medical.cta}
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="pratiche"
+          data-section="medical"
+        >
           Contattaci
         </a>
       </div>
@@ -217,7 +241,13 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
       </div>
 
       <div class="mt-8 text-center">
-        <a href={praticheData.duplicates.cta} class="btn-racing-primary">
+        <a
+          href={praticheData.duplicates.cta}
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="pratiche"
+          data-section="duplicates"
+        >
           Contattaci
         </a>
       </div>
@@ -236,7 +266,13 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
       </div>
 
       <div class="mt-8">
-        <a href={praticheData.points.cta} class="btn-racing-primary">
+        <a
+          href={praticheData.points.cta}
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="pratiche"
+          data-section="points"
+        >
           Contattaci
         </a>
       </div>
@@ -256,7 +292,13 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
 
       <div class="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
         {praticheData.final.ctas.map((cta) => (
-          <a href={cta.href} class="btn-racing-primary">
+          <a
+            href={cta.href}
+            class="btn-racing-primary"
+            data-track={cta.href.startsWith("https://wa.me/") ? "whatsapp_click" : "cta_click"}
+            data-location="pratiche"
+            data-section="final"
+          >
             {cta.label}
           </a>
         ))}

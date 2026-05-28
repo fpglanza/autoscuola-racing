@@ -36,11 +36,23 @@ import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#lista-patenti" class="btn-racing-lime">
+            <a
+              href="#lista-patenti"
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="patenti"
+              data-section="hero"
+            >
               scopri le patenti
             </a>
 
-            <a href="/contatti" class="btn-racing-ghost-lime">
+            <a
+              href="/contatti"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="patenti"
+              data-section="hero"
+            >
               chiedi informazioni
             </a>
           </div>
@@ -97,7 +109,13 @@ import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
               ))}
 
               <div class="pt-2">
-                <a href={item.cta.href} class="btn-secondary">
+                <a
+                  href={item.cta.href}
+                  class="btn-secondary"
+                  data-track="cta_click"
+                  data-location="patenti"
+                  data-section={item.slug}
+                >
                   {item.cta.label}
                 </a>
               </div>

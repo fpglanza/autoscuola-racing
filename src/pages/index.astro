@@ -38,12 +38,21 @@ const { title, description } = page.data;
               {homeData.hero.intro.map((paragraph) => <p>{paragraph}</p>)}
             </div>
             <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={homeData.hero.cta.href} class="btn-racing-lime">
+              <a
+                href={homeData.hero.cta.href}
+                class="btn-racing-lime"
+                data-track="cta_click"
+                data-location="home"
+                data-section="hero"
+              >
                 {homeData.hero.cta.label}
               </a>
               <a
                 href="/patente-auto"
                 class="btn-racing-ghost-lime"
+                data-track="cta_click"
+                data-location="home"
+                data-section="hero"
               >
                 scopri patente auto
               </a>
@@ -143,6 +152,9 @@ const { title, description } = page.data;
               <a
                 href={homeData.approach.cta.href}
                 class="btn-racing-ghost-lime"
+                data-track="cta_click"
+                data-location="home"
+                data-section="approach"
               >
                 {homeData.approach.cta.label}
               </a>
@@ -280,7 +292,13 @@ const { title, description } = page.data;
 
             <!-- CTA -->
             <div class="mt-auto pt-8">
-              <a href={item.href} class="btn-secondary">
+              <a
+                href={item.href}
+                class="btn-secondary"
+                data-track="cta_click"
+                data-location="home"
+                data-section="paths"
+              >
                 {item.ctaLabel}
               </a>
             </div>
@@ -376,6 +394,9 @@ const { title, description } = page.data;
               <a
                 href={cta.href}
                 class={cta.variant === "primary" ? "btn-racing-primary" : "btn-secondary"}
+                data-track={cta.href.startsWith("https://wa.me/") ? "whatsapp_click" : "cta_click"}
+                data-location="home"
+                data-section="practical-info"
               >
                 {cta.label}
               </a>
@@ -414,7 +435,13 @@ const { title, description } = page.data;
 
                 <p>
                   <strong class="text-[var(--color-secondary)]">Telefono:</strong><br />
-                  <a href="tel:+39041630163" class="font-semibold hover:text-[var(--color-primary)]">
+                  <a
+                    href="tel:+39041630163"
+                    class="font-semibold hover:text-[var(--color-primary)]"
+                    data-track="phone_click"
+                    data-location="favaro"
+                    data-section="practical-info"
+                  >
                     +39 041 630163
                   </a>
                 </p>
@@ -447,7 +474,13 @@ const { title, description } = page.data;
 
                 <p>
                   <strong class="text-[var(--color-secondary)]">Telefono:</strong><br />
-                  <a href="tel:+390415746510" class="font-semibold hover:text-[var(--color-primary)]">
+                  <a
+                    href="tel:+390415746510"
+                    class="font-semibold hover:text-[var(--color-primary)]"
+                    data-track="phone_click"
+                    data-location="salzano"
+                    data-section="practical-info"
+                  >
                     +39 041 5746510
                   </a>
                 </p>

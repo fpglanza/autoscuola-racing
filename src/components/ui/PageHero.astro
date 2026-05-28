@@ -48,13 +48,25 @@ const {
         {(primaryCta || secondaryCta) && (
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {primaryCta && (
-              <a href={primaryCta.href} class="btn-racing-primary">
+              <a
+                href={primaryCta.href}
+                class="btn-racing-primary"
+                data-track="cta_click"
+                data-location="page-hero"
+                data-section={label ?? "hero"}
+              >
                 {primaryCta.label}
               </a>
             )}
 
             {secondaryCta && (
-              <a href={secondaryCta.href} class="btn-secondary">
+              <a
+                href={secondaryCta.href}
+                class="btn-secondary"
+                data-track="cta_click"
+                data-location="page-hero"
+                data-section={label ?? "hero"}
+              >
                 {secondaryCta.label}
               </a>
             )}

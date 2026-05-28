@@ -8,30 +8,75 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import { site } from "../data/site";
 
-import CookieBanner from "../components/CookieBanner.astro";
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 
 interface Props {
   title?: string;
   description?: string;
-  breadcrumbs?: boolean;
+  image?: string;
 }
 
 const {
   title = site.name,
   description = site.description,
-  breadcrumbs = true,
+  image = "/og-image.jpg",
 } = Astro.props;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
 <html lang="it">
   <head>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        security_storage: 'granted'
+      });
+    </script>
+
+    {GTM_ID && (
+      <script is:inline define:vars={{ GTM_ID }}>
+        (function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+          j.async=true;
+          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',GTM_ID);
+      </script>
+    )}
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.toString()} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:image" content={ogImageURL.toString()} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.toString()} />
+
     <link rel="icon" type="image/png" href="/favicon/favicon-racing.png" />
+
     <style>
       :root {
         --font-heading: 'Exo 2', sans-serif;
@@ -46,6 +91,5 @@ const {
       <slot />
     </main>
     <Footer />
-    <CookieBanner />
   </body>
 </html>

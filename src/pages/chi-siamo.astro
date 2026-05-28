@@ -81,11 +81,23 @@ const teamMembers = [
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={chiSiamoData.hero.cta.href} class="btn-racing-lime">
+            <a
+              href={chiSiamoData.hero.cta.href}
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="chi-siamo"
+              data-section="hero"
+            >
               {chiSiamoData.hero.cta.label}
             </a>
 
-            <a href="#metodo" class="btn-racing-ghost-lime">
+            <a
+              href="#metodo"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="chi-siamo"
+              data-section="hero"
+            >
               scopri il metodo
             </a>
           </div>
@@ -357,7 +369,13 @@ const teamMembers = [
       </div>
 
       <div class="mt-8">
-        <a href={chiSiamoData.readiness.cta.href} class="btn-racing-primary">
+        <a
+          href={chiSiamoData.readiness.cta.href}
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="chi-siamo"
+          data-section="readiness"
+        >
           {chiSiamoData.readiness.cta.label}
         </a>
       </div>

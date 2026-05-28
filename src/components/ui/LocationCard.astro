@@ -40,9 +40,33 @@ const {
   </div>
 
   <div class="mt-6 flex flex-wrap gap-3">
-    <a href={`tel:${phone.replaceAll(" ", "")}`} class="btn-secondary">Chiama</a>
-    <a href={`mailto:${email}`} class="btn-secondary">Email</a>
-    <a href={whatsapp} class="btn-racing-primary">WhatsApp</a>
-    <a href={mapUrl} class="btn-secondary">Mappa</a>
+    <a
+      href={`tel:${phone.replaceAll(" ", "")}`}
+      class="btn-secondary"
+      data-track="phone_click"
+      data-location={city}
+      data-section="location-card"
+    >Chiama</a>
+    <a
+      href={`mailto:${email}`}
+      class="btn-secondary"
+      data-track="email_click"
+      data-location={city}
+      data-section="location-card"
+    >Email</a>
+    <a
+      href={whatsapp}
+      class="btn-racing-primary"
+      data-track="whatsapp_click"
+      data-location={city}
+      data-section="location-card"
+    >WhatsApp</a>
+    <a
+      href={mapUrl}
+      class="btn-secondary"
+      data-track="cta_click"
+      data-location={city}
+      data-section="location-card"
+    >Mappa</a>
   </div>
 </article>

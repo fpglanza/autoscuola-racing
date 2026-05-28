@@ -45,11 +45,23 @@ const { title, description } = page.data;
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#sedi" class="btn-racing-lime">
+            <a
+              href="#sedi"
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="contatti"
+              data-section="hero"
+            >
               scegli la sede
             </a>
 
-            <a href="#visite-mediche" class="btn-racing-ghost-lime">
+            <a
+              href="#visite-mediche"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="contatti"
+              data-section="hero"
+            >
               visite mediche
             </a>
           </div>
@@ -125,6 +137,9 @@ const { title, description } = page.data;
                 <a
                   href={action.href}
                   class={action.variant === "primary" ? "btn-racing-primary" : "btn-secondary"}
+                  data-track={action.href.startsWith("https://wa.me/") ? "whatsapp_click" : "phone_click"}
+                  data-location="favaro"
+                  data-section="locations"
                 >
                   {action.label}
                 </a>
@@ -196,6 +211,9 @@ const { title, description } = page.data;
                 <a
                   href={action.href}
                   class={action.variant === "primary" ? "btn-racing-primary" : "btn-secondary"}
+                  data-track={action.href.startsWith("https://wa.me/") ? "whatsapp_click" : "phone_click"}
+                  data-location="salzano"
+                  data-section="locations"
                 >
                   {action.label}
                 </a>
@@ -215,7 +233,13 @@ const { title, description } = page.data;
         </p>
 
         <div class="mt-8 flex flex-col items-center gap-4 md:flex-row md:justify-center">
-          <a href="/contatti" class="btn-racing-primary">
+          <a
+            href="/contatti"
+            class="btn-racing-primary"
+            data-track="cta_click"
+            data-location="contatti"
+            data-section="medical"
+          >
             Prenota la prossima visita
           </a>
 
@@ -225,6 +249,9 @@ const { title, description } = page.data;
               "Ciao Autoscuola Racing, vorrei sapere la prossima data disponibile per la visita medica in sede."
             )}
             class="btn-secondary"
+            data-track="whatsapp_click"
+            data-location="contatti"
+            data-section="medical"
           >
             Scrivici su WhatsApp
           </a>

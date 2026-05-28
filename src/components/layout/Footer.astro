@@ -86,6 +86,9 @@ import { navigation } from "../../data/navigation";
           <a
             href="tel:+39041630163"
             class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+            data-track="phone_click"
+            data-location="favaro"
+            data-section="footer"
           >
             +39 041 630163
           </a>
@@ -105,6 +108,9 @@ import { navigation } from "../../data/navigation";
           <a
             href="tel:+390415746510"
             class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+            data-track="phone_click"
+            data-location="salzano"
+            data-section="footer"
           >
             +39 041 5746510
           </a>
@@ -114,6 +120,9 @@ import { navigation } from "../../data/navigation";
         <a
           href="/contatti"
           class="pt-2 text-sm font-semibold transition hover:text-[var(--color-primary)]"
+          data-track="cta_click"
+          data-location="footer"
+          data-section="contacts"
         >
           Vai alla pagina contatti
         </a>
@@ -145,13 +154,6 @@ import { navigation } from "../../data/navigation";
           Cookie Policy
         </button>
 
-        <button
-          id="manage-cookies"
-          type="button"
-          class="hover:text-[var(--color-primary)]"
-        >
-          Gestisci preferenze cookie
-        </button>
       </div>
     </div>
 
@@ -319,7 +321,6 @@ import { navigation } from "../../data/navigation";
 </footer>
 
 <script>
-  import { resetConsent } from "../../lib/consent";
   const openButtons = document.querySelectorAll("[data-policy-open]");
   const closeButtons = document.querySelectorAll("[data-policy-close]");
   const modals = document.querySelectorAll("[data-policy-modal]");
@@ -370,10 +371,5 @@ import { navigation } from "../../data/navigation";
     if (event.key === "Escape") {
       closePolicyModals();
     }
-  });
-  
-  document.getElementById("manage-cookies")?.addEventListener("click", () => {
-    resetConsent();
-    window.location.reload();
   });
 </script>

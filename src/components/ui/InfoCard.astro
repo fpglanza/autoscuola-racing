@@ -25,7 +25,13 @@ const {
 
   {href && (
     <div class="mt-5">
-      <a href={href} class="btn-secondary">{ctaLabel}</a>
+      <a
+        href={href}
+        class="btn-secondary"
+        data-track="cta_click"
+        data-location="info-card"
+        data-section={title}
+      >{ctaLabel}</a>
     </div>
   )}
 </article>

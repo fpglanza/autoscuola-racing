@@ -52,11 +52,23 @@ const pathItems = patenteAutoData.path.items.map((item) => {
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={patenteAutoData.hero.cta.href} class="btn-racing-lime">
+            <a
+              href={patenteAutoData.hero.cta.href}
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="patente-auto"
+              data-section="hero"
+            >
               {patenteAutoData.hero.cta.label}
             </a>
 
-            <a href="#percorso" class="btn-racing-ghost-lime">
+            <a
+              href="#percorso"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="patente-auto"
+              data-section="hero"
+            >
               scopri il percorso
             </a>
           </div>
@@ -210,11 +222,23 @@ const pathItems = patenteAutoData.path.items.map((item) => {
         </p>
 
         <div class="mt-7 flex flex-col gap-4 sm:flex-row">
-          <a href={patenteAutoData.hero.cta.href} class="btn-racing-lime">
+          <a
+            href={patenteAutoData.hero.cta.href}
+            class="btn-racing-lime"
+            data-track="cta_click"
+            data-location="patente-auto"
+            data-section="clarity"
+          >
             {patenteAutoData.hero.cta.label}
           </a>
 
-          <a href="#prossimi-passi" class="btn-racing-ghost-lime">
+          <a
+            href="#prossimi-passi"
+            class="btn-racing-ghost-lime"
+            data-track="cta_click"
+            data-location="patente-auto"
+            data-section="clarity"
+          >
             parla con noi
           </a>
         </div>
@@ -248,7 +272,13 @@ const pathItems = patenteAutoData.path.items.map((item) => {
         </div>
 
         <div class="mt-auto pt-8">
-          <a href="#prossimi-passi" class="inline-flex text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-primary)] transition hover:text-white">
+          <a
+            href="#prossimi-passi"
+            class="inline-flex text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-primary)] transition hover:text-white"
+            data-track="cta_click"
+            data-location="patente-auto"
+            data-section="cost"
+          >
             chiedi un preventivo →
           </a>
         </div>
@@ -276,7 +306,13 @@ const pathItems = patenteAutoData.path.items.map((item) => {
         </p>
 
         <div class="mt-auto pt-8">
-          <a href="#prossimi-passi" class="inline-flex text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-primary)] transition hover:text-white">
+          <a
+            href="#prossimi-passi"
+            class="inline-flex text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-primary)] transition hover:text-white"
+            data-track="cta_click"
+            data-location="patente-auto"
+            data-section="points"
+          >
             chiedi info recupero punti →
           </a>
         </div>
@@ -308,7 +344,13 @@ const pathItems = patenteAutoData.path.items.map((item) => {
         </div>
 
         <div class="relative z-10 mt-auto pt-8">
-          <a href={patenteAutoData.hero.cta.href} class="btn-racing-lime">
+          <a
+            href={patenteAutoData.hero.cta.href}
+            class="btn-racing-lime"
+            data-track="cta_click"
+            data-location="patente-auto"
+            data-section="support"
+          >
             inizia con il metodo giusto
           </a>
         </div>
@@ -342,6 +384,9 @@ const pathItems = patenteAutoData.path.items.map((item) => {
               <a
                 href={cta.href}
                 class={index === 0 ? "btn-racing-primary" : "btn-secondary"}
+                data-track={cta.href.startsWith("https://wa.me/") ? "whatsapp_click" : "cta_click"}
+                data-location="patente-auto"
+                data-section="next-steps"
               >
                 {cta.label}
               </a>
@@ -383,7 +428,13 @@ const pathItems = patenteAutoData.path.items.map((item) => {
 
                 <p>
                   <strong class="text-[var(--color-secondary)]">Telefono:</strong><br />
-                  <a href="tel:+39041630163" class="font-semibold hover:text-[var(--color-primary)]">
+                  <a
+                    href="tel:+39041630163"
+                    class="font-semibold hover:text-[var(--color-primary)]"
+                    data-track="phone_click"
+                    data-location="favaro"
+                    data-section="next-steps"
+                  >
                     +39 041 630163
                   </a>
                 </p>
@@ -416,7 +467,13 @@ const pathItems = patenteAutoData.path.items.map((item) => {
 
                 <p>
                   <strong class="text-[var(--color-secondary)]">Telefono:</strong><br />
-                  <a href="tel:+390415746510" class="font-semibold hover:text-[var(--color-primary)]">
+                  <a
+                    href="tel:+390415746510"
+                    class="font-semibold hover:text-[var(--color-primary)]"
+                    data-track="phone_click"
+                    data-location="salzano"
+                    data-section="next-steps"
+                  >
                     +39 041 5746510
                   </a>
                 </p>

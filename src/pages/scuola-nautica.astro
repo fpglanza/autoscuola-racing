@@ -40,11 +40,23 @@ const { title, description } = page.data;
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={scuolaNauticaData.hero.primaryCta.href} class="btn-racing-lime">
+            <a
+              href={scuolaNauticaData.hero.primaryCta.href}
+              class="btn-racing-lime"
+              data-track="cta_click"
+              data-location="scuola-nautica"
+              data-section="hero"
+            >
               {scuolaNauticaData.hero.primaryCta.label}
             </a>
 
-            <a href="#corsi-nautica" class="btn-racing-ghost-lime">
+            <a
+              href="#corsi-nautica"
+              class="btn-racing-ghost-lime"
+              data-track="cta_click"
+              data-location="scuola-nautica"
+              data-section="hero"
+            >
               scopri i corsi
             </a>
           </div>
@@ -131,6 +143,9 @@ const { title, description } = page.data;
           <a
             href={action.href}
             class={index === 0 ? "btn-racing-primary" : "btn-secondary"}
+            data-track="cta_click"
+            data-location="scuola-nautica"
+            data-section="contact"
           >
             {action.label}
           </a>
