@@ -2,15 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { chiSiamoData } from "../data/chi-siamo";
-import chiSiamoHeroBg from "../assets/logo/Team 5.jpg";
-import smartphoneImg from "../assets/logo/Smartphone 3D.png";
+import chiSiamoHeroBg from "../assets-optimized/logo/Team 5.webp";
+import smartphoneImg from "../assets-optimized/logo/Smartphone 3D.webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 
-import team01 from "../assets/Team/team01.jpg";
-import team02 from "../assets/Team/team02.jpg";
-import team03 from "../assets/Team/team03.jpg";
-import team04 from "../assets/Team/team04.jpg";
-import team06 from "../assets/Team/team06.jpg";
+import team01 from "../assets-optimized/Team/team01.webp";
+import team02 from "../assets-optimized/Team/team02.webp";
+import team03 from "../assets-optimized/Team/team03.webp";
+import team04 from "../assets-optimized/Team/team04.webp";
+import team06 from "../assets-optimized/Team/team06.webp";
 
 const page = await getPageContent("chi-siamo");
 const { title, description } = page.data;

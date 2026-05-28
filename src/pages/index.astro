@@ -2,11 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { homeData } from "../data/home";
-import heroBg from "../assets/logo/Hero Banner Home R.jpg";
-import favaroImg from "../assets/logo/Ufficio (favaro).jpg";
-import salzanoImg from "../assets/logo/Sala (salzano) 2.jpg";
-import lessonImg from "../assets/logo/Fiore a lezione.jpg";
-import lightTrailImg from "../assets/logo/Light trail.jpg";
+import heroBg from "../assets-optimized/logo/Hero Banner Home R.webp";
+import favaroImg from "../assets-optimized/logo/Ufficio (favaro).webp";
+import salzanoImg from "../assets-optimized/logo/Sala (salzano) 2.webp";
+import lessonImg from "../assets-optimized/logo/Fiore a lezione.webp";
+import lightTrailImg from "../assets-optimized/logo/Light trail.webp";
 
 const page = await getPageContent("home");
 const { title, description } = page.data;

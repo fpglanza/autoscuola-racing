@@ -2,10 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageContent } from "../lib/content";
 import { patenteAutoData } from "../data/patente-auto";
-import autoHeroBg from "../assets/logo/Auto (sfondo con overlay).jpeg";
+import autoHeroBg from "../assets-optimized/logo/Auto (sfondo con overlay).webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
-import ragazzaPatenteImg from "../assets/logo/Ragazza patente B.jpg";
-import taglioLuceImg from "../assets/logo/Taglio di luce.jpg";
+import ragazzaPatenteImg from "../assets-optimized/logo/Ragazza patente B.webp";
+import taglioLuceImg from "../assets-optimized/logo/Taglio di luce.webp";
 
 const page = await getPageContent("patente-auto");
 const { title, description } = page.data;
