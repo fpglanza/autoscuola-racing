@@ -1,6 +1,6 @@
 export const chiSiamoData = {
   hero: {
-    heading: "Perché non tutte le autoscuole sono uguali.",
+    heading: "La nostra autoscuola è diversa.",
     intro:
       "Scegliere un metodo significa scegliere come vuoi vivere questo percorso. In Autoscuola Racing non sei un numero di pratica, ma una persona che entra a far parte della nostra famiglia. Puntiamo tutto sul rapporto umano: farti sentire a tuo agio, eliminare l'ansia e accompagnarti con la serenità di chi sa di avere qualcuno su cui contare.\nPerché imparare a guidare è più semplice, se ti senti a casa.",
     cta: {
