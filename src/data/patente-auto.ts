@@ -28,9 +28,9 @@ export const patenteAutoData = {
   },
 
   points: {
-    title: "Recupero punti patente",
+    title: "Rinnovo CQC in sede",
     body:
-      "Oltre alla formazione per i nuovi conducenti, offriamo corsi specifici per il recupero dei punti patente. Gestiamo questa necessità con discrezione e professionalità, fornendo gli approfondimenti necessari sulle normative aggiornate del Codice della Strada per permetterti di ripristinare il tuo punteggio in tempi certi e con la massima chiarezza sulle procedure.",
+      "Gestiamo direttamente in autoscuola il rinnovo della CQC, seguendoti nell'iscrizione al corso obbligatorio e nella preparazione della pratica. Organizziamo il percorso con chiarezza e supporto costante, aiutandoti a mantenere l'abilitazione necessaria per il trasporto professionale di merci o persone nel rispetto della normativa vigente.",
   },
 
   support: {
@@ -51,7 +51,7 @@ export const patenteAutoData = {
       {
         label: "Chiedi informazioni su WhatsApp",
         href: whatsappLink(
-          "393494157836",
+          "393755310899",
           "Ciao Autoscuola Racing, vorrei informazioni sulla Patente B."
         ),
       },

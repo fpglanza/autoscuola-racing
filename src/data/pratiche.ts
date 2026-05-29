@@ -56,7 +56,7 @@ export const praticheData = {
       {
         label: "Chiedi la data della visita su WhatsApp",
         href: whatsappLink(
-          "393494157836",
+          "393755310899",
           "Ciao Autoscuola Racing, vorrei sapere la prossima data disponibile per la visita medica in sede."
         ),
       },

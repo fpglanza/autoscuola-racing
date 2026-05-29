@@ -11,7 +11,6 @@ export const patentiData = {
       title: "Patente AM (ex C.I.G.)",
       content: [
         "A partire da 14 anni. È la chiave per la prima autonomia. Permette di guidare ciclomotori a 2 o 3 ruote (fino a 50 cc e 45 km/h) e quadricicli leggeri (minicar). Richiede un esame teorico a quiz e una prova pratica di abilità e comportamento.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Richiedi info per il patentino",
@@ -28,7 +27,6 @@ export const patentiData = {
         "A2 (18 anni): Moto fino a 35kW.",
         "A (20 o 24 anni): Senza limiti di potenza.",
         "Nota: Se hai già la patente B, sosterrai solo la prova pratica.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Sali in sella: contattaci",
@@ -41,9 +39,8 @@ export const patentiData = {
       title: "Patente B",
       content: [
         "A partire da 18 anni. Abilita alla guida di autoveicoli fino a 3.500 kg e massimo 8 passeggeri oltre al conducente.",
-        "Consente anche di guidare macchine agricole e operatrici (non eccezionali) e motocicli leggeri (solo in Italia).",
+        "Macchine agricole, operatrici e motocicli leggeri: la Patente B consente anche queste categorie nei limiti previsti dalla normativa.",
         "Include 6 ore di guida obbligatorie per legge.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Inizia il tuo percorso auto",
@@ -52,14 +49,26 @@ export const patentiData = {
     },
 
     {
+      slug: "patente-b96",
+      title: "Patente B96",
+      content: [
+        "Estensione della patente B dedicata ai complessi veicolo + rimorchio che superano i limiti della B standard e rientrano nella soglia prevista per la B96.",
+        "È indicata quando devi trainare un rimorchio più impegnativo mantenendo un percorso mirato, con verifica dei requisiti e preparazione alla prova prevista.",
+      ],
+      cta: {
+        label: "Chiedi info sulla Patente B96",
+        href: "/contatti",
+      },
+    },
+
+    {
       slug: "patente-c",
       title: "Patente C (C1, C, C1E, CE)",
       content: [
         "Il mondo dell'autotrasporto. Necessaria per veicoli adibiti al trasporto cose oltre le 3,5 tonnellate.",
-        "Patente C1 (18 anni): Camion dai 3.500 kg ai 7.500 kg.",
+        "Patente C1 (18 anni): Autocarri dai 3.500 kg ai 7.500 kg.",
         "Patente C (21 anni): Senza limiti di massa.",
         "Patente CE: Per complessi di veicoli.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Info Patenti Mezzi Pesanti",
@@ -75,7 +84,6 @@ export const patentiData = {
         "Patente D1 (21 anni): Autobus fino a 16 passeggeri.",
         "Patente D (24 anni): Autobus senza limiti.",
         "Patente DE: Autobus con rimorchio.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Info Patente Autobus",
@@ -88,8 +96,7 @@ export const patentiData = {
       title: "Patente E (Estensioni BE, CE, DE)",
       content: [
         "Rimorchi e masse. L'estensione E si ottiene con un esame pratico e permette di trainare rimorchi o semirimorchi non leggeri (oltre i 750 kg).",
-        "Fondamentale per la logistica o per chi trasporta carrelli barca o cavalli di massa elevata.",
-        "Gestione esami: Consorzio.",
+        "Fondamentale per la logistica o per chi trasporta rimorchi di massa elevata.",
       ],
       cta: {
         label: "Info sui Rimorchi",
@@ -112,10 +119,9 @@ export const patentiData = {
 
     {
       slug: "cap-b",
-      title: "CAP B (KA / KB)",
+      title: "CAP B (KB)",
       content: [
         "Certificato di Abilitazione Professionale per autovetture.",
-        "KA: Per motocarrozzette in servizio pubblico.",
         "KB: Indispensabile per Taxi e NCC (Noleggio con Conducente).",
       ],
       cta: {
@@ -146,7 +152,6 @@ export const patentiData = {
         "Destinata a conducenti con minorazioni fisiche o mutilazioni.",
         "La patente viene rilasciata previo parere della Commissione Medica Locale, con indicazione degli adattamenti necessari sul veicolo.",
         "Seguiamo l'intero iter burocratico e tecnico.",
-        "Gestione esami: Consorzio.",
       ],
       cta: {
         label: "Consulenza Patenti Speciali",

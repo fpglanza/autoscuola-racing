@@ -9,7 +9,7 @@ export const locations = [
     phone: "041 630163",
     email: "autoscuolaracing2@libero.it",
     whatsapp: whatsappLink(
-      "393494157836",
+      "393755310899",
       "Ciao Autoscuola Racing Favaro, vorrei ricevere informazioni."
     ),
     notes: "Sede legale e operativa",
@@ -23,7 +23,7 @@ export const locations = [
     phone: "041 5746510",
     email: "autoscuolaracing3@gmail.com",
     whatsapp: whatsappLink(
-      "393494157836",
+      "393755184936",
       "Ciao Autoscuola Racing Salzano, vorrei ricevere informazioni."
     ),
     notes: "Filiale operativa",

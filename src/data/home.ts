@@ -31,7 +31,7 @@ export const homeData = {
   ],
 
   serviceNote:
-    "Dalle prime lezioni fino al conseguimento della Patente B o Nautica, gestiamo ogni pratica — inclusi i rinnovi con visita medica in sede — per lasciarti solo il piacere di imparare.",
+    "Dalle prime lezioni fino al conseguimento della Patente B, gestiamo ogni pratica - inclusi i rinnovi con visita medica in sede - per lasciarti solo il piacere di imparare.",
 
   approach: {
     label: "Il nostro approccio",
@@ -58,16 +58,16 @@ export const homeData = {
         ctaLabel: "Inizia il tuo percorso auto",
       },
       {
-        title: "Cambio e Seconda Possibilità",
+        title: "Cambio e seconda possibilità",
         text: "Se hai avuto un'esperienza negativa o sei stato bocciato altrove, accogliamo il tuo percorso senza giudizio. Costruiamo il piano di recupero per portarti al traguardo.",
         href: "/contatti",
         ctaLabel: "Contattaci",
       },
       {
-        title: "Scuola Nautica e Pratiche Rapide",
-        text: "Corsi per la patente nautica entro le 12 miglia e gestione semplificata di rinnovi e duplicati. Trasparenza totale sui costi e supporto burocratico immediato.",
-        href: "/scuola-nautica",
-        ctaLabel: "Scopri di più",
+        title: "Rinnovo patente e pratiche rapide",
+        text: "Gestiamo rinnovi, duplicati e pratiche patente con procedure rapide e supporto diretto in segreteria. Ti aiutiamo nella verifica dei documenti, nella prenotazione delle visite e nella gestione burocratica, con informazioni chiare su tempi, costi e modalità della pratica.",
+        href: "/contatti",
+        ctaLabel: "Contattaci",
       },
     ],
   },
@@ -94,8 +94,8 @@ export const homeData = {
     body:
       "Vogliamo che il tuo percorso inizi senza complicazioni. Qui trovi le informazioni necessarie per raggiungerci o per chiederci un chiarimento sui corsi, sui costi della patente o sulle modalità di iscrizione.",
     locations: [
-      "Sede di Favaro Veneto Via M.te Cervino, 23/a, 30173 Favaro Veneto (VE) Orari segreteria: [Inserire Orari] Telefono: +39 041 630163",
-      "Sede di Salzano Via A. De Gasperi, 84, 30030 Salzano (VE) Orari segreteria: [Inserire Orari] Telefono: +39 041 5746510",
+      "Sede di Favaro Veneto Via M.te Cervino, 23/a, 30173 Favaro Veneto (VE) Orari segreteria: Lunedi - Venerdi 9:00-12:00 / 16:00-19:00 Telefono: +39 041 630163",
+      "Sede di Salzano Via A. De Gasperi, 84, 30030 Salzano (VE) Orari segreteria: Lunedi - Venerdi 9:00-12:00 / 16:30-19:00 Telefono: +39 041 5746510",
     ],
     medical:
       "Visite mediche in sede Per velocizzare il rinnovo della patente o l'inizio delle pratiche per la Patente B, organizziamo regolarmente sessioni con il medico in sede. Contattaci per conoscere la data della prossima disponibilità.",
@@ -103,7 +103,7 @@ export const homeData = {
       {
         label: "Scrivici su WhatsApp per info rapide",
         href: whatsappLink(
-          "393494157836",
+          "393755310899",
           "Ciao Autoscuola Racing, vorrei ricevere informazioni."
         ),
         variant: "secondary",

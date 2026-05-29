@@ -1,7 +1,7 @@
 ---
 import { navigation } from "../../data/navigation";
 import { patentiData } from "../../data/patenti";
-import logoColor from "../../assets-optimized/logo/6x/Asset 13.webp";
+import logoColor from "../../assets/logo/Asset 20RACING LOGO.png";
 
 const normalizePath = (path: string) => {
   if (!path || path === "/") return "/";
@@ -13,14 +13,14 @@ const currentPath = normalizePath(Astro.url.pathname);
 const desktopNavigation = navigation.filter((item) => item.href !== "/");
 
 const leftNavigation = [
+  navigation.find((item) => item.href === "/"),
   desktopNavigation.find((item) => item.href === "/chi-siamo"),
   desktopNavigation.find((item) => item.href === "/patente-auto"),
-  desktopNavigation.find((item) => item.href === "/pratiche"),
 ].filter(Boolean);
 
 const rightNavigation = [
+  desktopNavigation.find((item) => item.href === "/pratiche"),
   desktopNavigation.find((item) => item.href === "/patenti"),
-  desktopNavigation.find((item) => item.href === "/scuola-nautica"),
   desktopNavigation.find((item) => item.href === "/contatti"),
 ].filter(Boolean);
 

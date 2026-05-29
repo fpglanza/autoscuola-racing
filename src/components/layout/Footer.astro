@@ -1,6 +1,7 @@
 ---
-import logoColor from "../../assets-optimized/logo/6x/Asset 13.webp";
+import logoColor from "../../assets/logo/Asset 20RACING LOGO.png";
 import { navigation } from "../../data/navigation";
+import { whatsappLink } from "../../lib/whatsapp";
 ---
 
 <footer class="bg-[var(--color-secondary)] text-white">
@@ -92,6 +93,23 @@ import { navigation } from "../../data/navigation";
           >
             +39 041 630163
           </a>
+
+          <p class="text-xs leading-5 text-white/55">
+            Lunedi - Venerdi: 9:00-12:00 / 16:00-19:00
+          </p>
+
+          <a
+            href={whatsappLink(
+              "393755310899",
+              "Ciao Autoscuola Racing Favaro, vorrei ricevere informazioni."
+            )}
+            class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+            data-track="whatsapp_click"
+            data-location="favaro"
+            data-section="footer"
+          >
+            WhatsApp Favaro
+          </a>
         </div>
 
         <!-- SALZANO -->
@@ -113,6 +131,23 @@ import { navigation } from "../../data/navigation";
             data-section="footer"
           >
             +39 041 5746510
+          </a>
+
+          <p class="text-xs leading-5 text-white/55">
+            Lunedi - Venerdi: 9:00-12:00 / 16:30-19:00
+          </p>
+
+          <a
+            href={whatsappLink(
+              "393755184936",
+              "Ciao Autoscuola Racing Salzano, vorrei ricevere informazioni."
+            )}
+            class="text-sm text-white/80 transition hover:text-[var(--color-primary)]"
+            data-track="whatsapp_click"
+            data-location="salzano"
+            data-section="footer"
+          >
+            WhatsApp Salzano
           </a>
         </div>
 

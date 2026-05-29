@@ -2,7 +2,7 @@ export const site = {
   name: "Autoscuola Racing",
   legalName: "CIEMME S.r.l. a socio unico",
   description:
-    "Autoscuola e scuola nautica tra Favaro Veneto e Salzano. Un percorso chiaro, serio e accompagnato fino a quando sei davvero pronto.",
+    "Autoscuola tra Favaro Veneto e Salzano. Un percorso chiaro, serio e accompagnato fino a quando sei davvero pronto.",
   url: "https://autoscuolaracing.it",
   locale: "it_IT",
   phoneFavaro: "041 630163",
