@@ -15,7 +15,7 @@ interface Props {
 const {
   title = site.name,
   description = site.description,
-  image = "/og-image.jpg",
+  image = "/favicon/favicon_new.jpeg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -76,7 +76,7 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.toString()} />
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-racing.png" />
+    <link rel="icon" type="image/jpeg" href="/favicon/favicon_new.jpeg" />
 
   </head>
 
