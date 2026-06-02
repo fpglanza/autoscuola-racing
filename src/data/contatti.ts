@@ -38,7 +38,7 @@ export const contattiData = {
       "Per gli allievi della zona, la sede di Salzano offre la stessa attenzione e il clima familiare che contraddistingue Autoscuola Racing.",
     address: "Via A. de Gasperi, 84, 30030 Salzano (VE)",
     phone: "041 574 6510",
-    email: "autoscuolaracing2@libero.it",
+    email: "autoscuolaracing3@libero.it",
     hours: "Lunedi - Venerdi: 9:00-12:00 / 16:30-19:00",
     actions: [
       {

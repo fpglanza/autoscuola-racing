@@ -15,7 +15,7 @@ interface Props {
 const {
   title = site.name,
   description = site.description,
-  image = "/og/preview.jpeg",
+  image = "/favicon/favicon_new.jpeg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -67,8 +67,8 @@ const ogImageURL = new URL(image, Astro.site);
     <meta property="og:image" content={ogImageURL.toString()} />
     <meta property="og:image:secure_url" content={ogImageURL.toString()} />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1417" />
+    <meta property="og:image:height" content="1417" />
 
     <meta
       name="google-site-verification"
@@ -80,8 +80,8 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.toString()} />
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-racing.png" />
-    <link rel="apple-touch-icon" href="/favicon/favicon-racing.png" />
+    <link rel="icon" href="/favicon/favicon_new.jpeg" />
+    <link rel="apple-touch-icon" href="/favicon/favicon_new.jpeg" />
 
   </head>
 
