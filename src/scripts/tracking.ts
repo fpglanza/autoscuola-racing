@@ -5,6 +5,7 @@ type TrackingWindow = Window & {
 };
 
 const trackingWindow = window as TrackingWindow;
+const GA4_MEASUREMENT_ID = "G-N5XYL25R5K";
 
 if (!trackingWindow.__trackingInitialized) {
   trackingWindow.__trackingInitialized = true;
@@ -31,6 +32,7 @@ if (!trackingWindow.__trackingInitialized) {
       if (!eventName) return;
 
       const parameters = {
+        send_to: GA4_MEASUREMENT_ID,
         event_category: "engagement",
         location: element.dataset.location || "",
         section: element.dataset.section || "",
@@ -46,7 +48,16 @@ if (!trackingWindow.__trackingInitialized) {
 
       if (typeof trackingWindow.gtag !== "function") return;
 
+      if (trackingWindow.__racingTrackingDebug) {
+        console.log("window.gtag === gtag", trackingWindow.gtag === globalThis.gtag);
+        console.log("Sending GA4 event", eventName, parameters);
+      }
+
       trackingWindow.gtag("event", eventName, parameters);
+
+      if (trackingWindow.__racingTrackingDebug) {
+        console.log("GA4 event sent");
+      }
     },
     { capture: true }
   );
