@@ -1,11 +1,14 @@
 type TrackingWindow = Window & {
-  gtag?: (command: "event", eventName: string, parameters: Record<string, string>) => void;
+  gtag?: (command: "event", eventName: string, parameters: TrackingParameters) => void;
   __racingTrackingDebug?: boolean;
   __trackingInitialized?: boolean;
 };
 
+type TrackingParameters = Record<string, string | number | (() => void)>;
+
 const trackingWindow = window as TrackingWindow;
 const GA4_MEASUREMENT_ID = "G-N5XYL25R5K";
+const NAVIGATION_FALLBACK_MS = 600;
 
 if (!trackingWindow.__trackingInitialized) {
   trackingWindow.__trackingInitialized = true;
@@ -23,7 +26,8 @@ if (!trackingWindow.__trackingInitialized) {
 
       if (!element) return;
 
-      const href = element instanceof HTMLAnchorElement ? element.href : "";
+      const anchor = element instanceof HTMLAnchorElement ? element : element.closest("a[href]");
+      const href = anchor?.href || "";
       const eventName =
         element.dataset.track ||
         (href.startsWith("tel:") ? "phone_click" : "") ||
@@ -42,11 +46,41 @@ if (!trackingWindow.__trackingInitialized) {
         page_path: window.location.pathname
       };
 
+      const isModifiedClick =
+        event instanceof MouseEvent &&
+        (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey);
+      const isSpecialHref =
+        href.startsWith("tel:") ||
+        href.startsWith("mailto:") ||
+        href.includes("wa.me/") ||
+        href.includes("whatsapp");
+      const shouldDelayNavigation =
+        Boolean(anchor?.dataset.track && href) &&
+        !isSpecialHref &&
+        !isModifiedClick &&
+        !anchor?.hasAttribute("download") &&
+        (anchor?.target || "_self").toLowerCase() !== "_blank";
+
       if (trackingWindow.__racingTrackingDebug) {
         console.debug("[Racing tracking]", eventName, parameters);
       }
 
       if (typeof trackingWindow.gtag !== "function") return;
+
+      if (shouldDelayNavigation && anchor && event.cancelable) {
+        event.preventDefault();
+
+        let didNavigate = false;
+        const navigate = () => {
+          if (didNavigate) return;
+          didNavigate = true;
+          window.location.href = href;
+        };
+
+        parameters.event_callback = navigate;
+        parameters.event_timeout = NAVIGATION_FALLBACK_MS;
+        window.setTimeout(navigate, NAVIGATION_FALLBACK_MS);
+      }
 
       if (trackingWindow.__racingTrackingDebug) {
         console.log("window.gtag === gtag", trackingWindow.gtag === globalThis.gtag);
