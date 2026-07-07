@@ -61,10 +61,6 @@ if (!trackingWindow.__trackingInitialized) {
         !anchor?.hasAttribute("download") &&
         (anchor?.target || "_self").toLowerCase() !== "_blank";
 
-      if (trackingWindow.__racingTrackingDebug) {
-        console.debug("[Racing tracking]", eventName, parameters);
-      }
-
       if (typeof trackingWindow.gtag !== "function") return;
 
       if (shouldDelayNavigation && anchor && event.cancelable) {
@@ -82,16 +78,7 @@ if (!trackingWindow.__trackingInitialized) {
         window.setTimeout(navigate, NAVIGATION_FALLBACK_MS);
       }
 
-      if (trackingWindow.__racingTrackingDebug) {
-        console.log("window.gtag === gtag", trackingWindow.gtag === globalThis.gtag);
-        console.log("Sending GA4 event", eventName, parameters);
-      }
-
       trackingWindow.gtag("event", eventName, parameters);
-
-      if (trackingWindow.__racingTrackingDebug) {
-        console.log("GA4 event sent");
-      }
     },
     { capture: true }
   );
