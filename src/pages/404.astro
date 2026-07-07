@@ -18,15 +18,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
 
       <div class="mt-8 flex flex-col gap-4 md:flex-row md:justify-center">
-        <a href="/" class="btn-racing-primary">
+        <a
+          href="/"
+          class="btn-racing-primary"
+          data-track="cta_click"
+          data-location="404"
+          data-section="home"
+        >
           Torna in carreggiata
         </a>
 
-        <a href="/scuola-nautica" class="btn-secondary">
+        <a
+          href="/scuola-nautica"
+          class="btn-secondary"
+          data-track="cta_click"
+          data-location="404"
+          data-section="scuola-nautica"
+        >
           Cambia rotta
         </a>
 
-        <a href="/contatti" class="btn-secondary">
+        <a
+          href="/contatti"
+          class="btn-secondary"
+          data-track="cta_click"
+          data-location="404"
+          data-section="contatti"
+        >
           Chiedi indicazioni
         </a>
       </div>
