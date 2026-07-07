@@ -59,6 +59,11 @@ const ogImageURL = new URL(image, Astro.site);
       // Bridge LegalBlink consent events to Google Consent Mode v2.
       window.addEventListener('legalblinkconsentgiven', function () {
         gtag('consent', 'update', grantedConsent);
+        gtag('event', 'page_view', {
+          send_to: 'G-N5XYL25R5K',
+          page_location: window.location.href,
+          page_title: document.title
+        });
       });
 
       // Keep Google Consent Mode denied when only necessary cookies are active.
