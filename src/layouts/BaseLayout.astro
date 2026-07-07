@@ -37,6 +37,38 @@ const ogImageURL = new URL(image, Astro.site);
         functionality_storage: 'denied',
         security_storage: 'granted'
       });
+
+      const deniedConsent = {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        security_storage: 'granted'
+      };
+
+      const grantedConsent = {
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      };
+
+      // Bridge LegalBlink consent events to Google Consent Mode v2.
+      window.addEventListener('legalblinkconsentgiven', function () {
+        gtag('consent', 'update', grantedConsent);
+      });
+
+      // Keep Google Consent Mode denied when only necessary cookies are active.
+      window.addEventListener('legalblink_necessary', function () {
+        gtag('consent', 'update', deniedConsent);
+      });
+
+      window.addEventListener('legalblink_history_change', function () {
+        gtag('consent', 'update', deniedConsent);
+      });
     </script>
 
     {GTM_ID && (
