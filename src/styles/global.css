@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import "@fontsource-variable/exo-2/wght.css";
+@import "@fontsource-variable/exo-2/wght-italic.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
 
 /* =====================
    DESIGN TOKENS
@@ -11,6 +18,9 @@
   --color-accent: #2124BD;
   --color-text: #2C3E50;
   --color-bg: #FFFFFF;
+
+  --font-heading: "Exo 2 Variable", sans-serif;
+  --font-body: "Montserrat", sans-serif;
 
   /* LEGACY (temporaneo) */
   --racing-green: #8dc63f;
@@ -37,6 +47,7 @@ html {
 body {
   color: var(--color-text);
   background: var(--color-bg);
+  font-family: var(--font-body);
 }
 
 h1 {
@@ -108,13 +119,14 @@ h4,
 h5,
 h6,
 .font-heading {
-  font-family: inherit;
+  font-family: var(--font-heading);
 }
 
 body,
 .font-body,
+.font-montserrat,
 .\!font-body {
-  font-family: inherit !important;
+  font-family: var(--font-body) !important;
 }
 
 h2, h3 {
