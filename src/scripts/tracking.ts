@@ -1,12 +1,12 @@
 type TrackingWindow = Window & {
   gtag?: (command: "event", eventName: string, parameters: Record<string, string>) => void;
-  __racingTrackingInitialized?: boolean;
+  __trackingInitialized?: boolean;
 };
 
 const trackingWindow = window as TrackingWindow;
 
-if (!trackingWindow.__racingTrackingInitialized) {
-  trackingWindow.__racingTrackingInitialized = true;
+if (!trackingWindow.__trackingInitialized) {
+  trackingWindow.__trackingInitialized = true;
 
   document.addEventListener("click", (event) => {
     const target = event.target;
