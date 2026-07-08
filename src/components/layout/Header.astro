@@ -1,6 +1,8 @@
 ---
 import { navigation } from "../../data/navigation";
 import { patentiData } from "../../data/patenti";
+import Icon from "../ui/Icon.astro";
+import { icons } from "../../lib/icons";
 import logoColor from "../../assets/logo/Asset 20RACING LOGO.png";
 
 const normalizePath = (path: string) => {
@@ -178,16 +180,7 @@ const isActive = (href: string) => currentPath === normalizePath(href);
                     ]}
                     aria-hidden="true"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
+                    <Icon src={icons.chevron} class="h-5 w-5" />
                   </span>
                 </button>
 

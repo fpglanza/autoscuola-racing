@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { getPageContent } from "../lib/content";
 import { homeData } from "../data/home";
+import { icons } from "../lib/icons";
 import heroBg from "../assets-optimized/logo/Hero Banner Home R.webp";
 import favaroImg from "../assets-optimized/logo/Ufficio (favaro).webp";
 import salzanoImg from "../assets-optimized/logo/Sala (salzano) 2.webp";
@@ -199,81 +201,15 @@ const { title, description } = page.data;
                 >
 
                   {index === 0 && (
-                    <!-- VOLANTE -->
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-7 w-7"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="1.9"
-                    >
-                      <circle cx="12" cy="12" r="8"></circle>
-                      <path d="M4 12h16"></path>
-                      <path d="M12 12l3 6"></path>
-                      <path d="M12 12l-3 6"></path>
-                    </svg>
+                    <Icon src={icons.steeringWheel} class="h-7 w-7" />
                   )}
 
                   {index === 1 && (
-                    <!-- LIBRO -->
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-7 w-7"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="1.9"
-                    >
-                      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5z"></path>
-                      <path d="M8 7h8"></path>
-                      <path d="M8 11h6"></path>
-                    </svg>
+                    <Icon src={icons.carChassis} class="h-7 w-7" />
                   )}
 
                   {index === 2 && (
-  <!-- NAVE PROFILO -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="h-7 w-7"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="1.9"
-  >
-    <!-- scafo -->
-    <path
-      d="M4 14h11l3 3H7L4 14Z"
-      stroke-linejoin="round"
-      stroke-linecap="round"
-    />
-
-    <!-- cabina -->
-    <path
-      d="M10 10h4v4h-4z"
-      stroke-linejoin="round"
-    />
-
-    <!-- albero -->
-    <path
-      d="M12 10V6"
-      stroke-linecap="round"
-    />
-
-    <!-- bandiera -->
-    <path
-      d="M12 6l3 1.5L12 9"
-      stroke-linejoin="round"
-      stroke-linecap="round"
-    />
-
-    <!-- onde -->
-    <path
-      d="M3 20c1-.8 2-.8 3 0s2 .8 3 0 2-.8 3 0 2 .8 3 0 2-.8 3 0"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
+                    <Icon src={icons.flag} class="h-7 w-7" />
                   )}
 
                 </div>

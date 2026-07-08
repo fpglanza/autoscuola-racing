@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { getPageContent } from "../lib/content";
 import { contattiData } from "../data/contatti";
+import { icons } from "../lib/icons";
 import { whatsappLink } from "../lib/whatsapp";
 import contattiHeroBg from "../assets-optimized/logo/Taglio di luce.webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
@@ -90,19 +92,7 @@ const { title, description } = page.data;
               </div>
 
               <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#12135D] text-white shadow-[0_16px_35px_rgba(18,19,93,0.18)]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-7 w-7"
-                  aria-hidden="true"
-                >
-                  <path d="M12 21s-6-5.33-6-11a6 6 0 1 1 12 0c0 5.67-6 11-6 11Z"></path>
-                  <circle cx="12" cy="10" r="2.5"></circle>
-                </svg>
+                <Icon src={icons.map} class="h-7 w-7" />
               </div>
             </div>
 
@@ -164,19 +154,7 @@ const { title, description } = page.data;
               </div>
 
               <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#D4FF00] text-[#12135D] shadow-[0_16px_35px_rgba(18,19,93,0.12)]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-7 w-7"
-                  aria-hidden="true"
-                >
-                  <path d="M12 21s-6-5.33-6-11a6 6 0 1 1 12 0c0 5.67-6 11-6 11Z"></path>
-                  <circle cx="12" cy="10" r="2.5"></circle>
-                </svg>
+                <Icon src={icons.map} class="h-7 w-7" />
               </div>
             </div>
 

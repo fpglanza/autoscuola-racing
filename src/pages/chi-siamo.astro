@@ -1,8 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { getPageContent } from "../lib/content";
 import { chiSiamoData } from "../data/chi-siamo";
+import { icons } from "../lib/icons";
 import chiSiamoHeroBg from "../assets/logo/Team 6.jpg";
+import supportoDedicatoImg from "../assets/logo/Supporto dedicato.jpeg";
 import smartphoneImg from "../assets-optimized/logo/Smartphone 3D.webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 
@@ -143,69 +146,19 @@ const teamMembers = [
                 ]}
               >
                 {index === 0 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path d="M21 21l-4.35-4.35"></path>
-                  </svg>
+                  <Icon src={icons.light} class="h-9 w-9" />
                 )}
 
                 {index === 1 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 3h6l5 5v13H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path>
-                    <path d="M14 3v5h5"></path>
-                    <path d="M10 13h4"></path>
-                    <path d="M10 17h4"></path>
-                  </svg>
+                  <Icon src={icons.clipboard} class="h-9 w-9" />
                 )}
 
                 {index === 2 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M4 16l5-5 4 4 7-7"></path>
-                    <path d="M14 8h6v6"></path>
-                  </svg>
+                  <Icon src={icons.map} class="h-9 w-9" />
                 )}
 
                 {index === 3 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="M22 4 12 14.01l-3-3"></path>
-                  </svg>
+                  <Icon src={icons.finish} class="h-9 w-9" />
                 )}
               </div>
 
@@ -340,21 +293,6 @@ const teamMembers = [
     </div>
   </section>
 
-  <!-- SUPPORTO -->
-  <section class="section section-light">
-    <div class="container max-w-3xl">
-      <h2 class="text-3xl font-bold uppercase">
-        {chiSiamoData.support.title}
-      </h2>
-
-      <div class="mt-6 space-y-4 text-base leading-7 text-black/70 md:text-lg md:leading-8">
-        {chiSiamoData.support.body.split("\n").map((p) => (
-          <p>{p}</p>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- PRONTO -->
   <section class="section">
     <div class="container max-w-3xl">
@@ -378,6 +316,37 @@ const teamMembers = [
         >
           {chiSiamoData.readiness.cta.label}
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src={supportoDedicatoImg.src}
+        alt=""
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-[rgba(7,10,35,0.28)] mix-blend-multiply"></div>
+
+      <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-[var(--color-secondary)]/12 to-[var(--color-secondary)]/38"></div>
+    </div>
+
+    <div class="relative z-10">
+      <div class="container py-28 md:py-36">
+        <div class="max-w-4xl">
+          <h2 class="max-w-3xl text-[34px] uppercase leading-[0.9] text-[var(--color-primary)] md:text-[64px]">
+            {chiSiamoData.support.title}
+          </h2>
+
+          <div class="mt-10 max-w-2xl space-y-5 text-base leading-7 text-white/82 md:text-lg md:leading-[1.7]">
+            {chiSiamoData.support.body.split("\n").map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>

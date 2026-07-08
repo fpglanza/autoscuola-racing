@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { getPageContent } from "../lib/content";
 import { patenteAutoData } from "../data/patente-auto";
+import { icons } from "../lib/icons";
 import autoHeroBg from "../assets-optimized/logo/Auto (sfondo con overlay).webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 import ragazzaPatenteImg from "../assets-optimized/logo/Ragazza patente B.webp";
@@ -103,71 +105,19 @@ const pathItems = patenteAutoData.path.items.map((item) => {
                 ]}
               >
                 {index === 0 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M4 19h16"></path>
-                    <path d="M5 16V8l7-4 7 4v8"></path>
-                    <path d="M9 10h6"></path>
-                    <path d="M9 13h6"></path>
-                  </svg>
+                  <Icon src={icons.start} class="h-9 w-9" />
                 )}
 
                 {index === 1 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 3h6l5 5v13H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path>
-                    <path d="M14 3v5h5"></path>
-                    <path d="M10 13h4"></path>
-                    <path d="M10 17h4"></path>
-                  </svg>
+                  <Icon src={icons.gearCar} class="h-9 w-9" />
                 )}
 
                 {index === 2 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="7"></circle>
-                    <path d="M12 9v3l2 2"></path>
-                  </svg>
+                  <Icon src={icons.carPedals} class="h-9 w-9" />
                 )}
 
                 {index === 3 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="M22 4 12 14.01l-3-3"></path>
-                  </svg>
+                  <Icon src={icons.cone} class="h-9 w-9" />
                 )}
               </div>
 

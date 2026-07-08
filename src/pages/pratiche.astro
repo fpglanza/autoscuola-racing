@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { getPageContent } from "../lib/content";
 import { praticheData } from "../data/pratiche";
+import { icons } from "../lib/icons";
 import praticheHeroBg from "../assets-optimized/logo/Ragazza patente B.webp";
 import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
 
@@ -109,53 +111,15 @@ const duplicateItems = praticheData.duplicates.items.map((item) => {
                 ]}
               >
                 {index === 0 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 7h8"></path>
-                    <path d="M8 11h8"></path>
-                    <path d="M8 15h5"></path>
-                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                  </svg>
+                  <Icon src={icons.podium} class="h-9 w-9" />
                 )}
 
                 {index === 1 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="M22 4 12 14.01l-3-3"></path>
-                  </svg>
+                  <Icon src={icons.fire} class="h-9 w-9" />
                 )}
 
                 {index === 2 && (
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-9 w-9"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="7"></circle>
-                    <path d="M12 9v3l2 2"></path>
-                  </svg>
+                  <Icon src={icons.gear} class="h-9 w-9" />
                 )}
               </div>
 
